@@ -11,9 +11,19 @@
   padding: 5px 0;      /* control thickness manually */
 }
 
-body{
-    background-image: url(/cs-stitchings/src/cs/Assets/girl.png);
-    background-repeat: no-repeat;
+#hero {
+  background-image: url(/cs-stitchings/src/cs/Assets/girl.png);
+  background-size: cover;     /* cover full screen */
+  background-position: center;
+  height: 100vh;              /* full screen height */
+  position: relative;
+  color: white;
+}
+#hero #seal{
+  display:flex;
+  justify-content: center;
+  padding-top: 20%;
+  padding-bottom: 0%;
 }
 body {
   overflow-x: hidden; /* Prevents horizontal scroll */
@@ -41,12 +51,6 @@ body{
   display: block;         /* makes padding work fully */
 }
 
-#seal {
-  position: absolute;   /* allows free placement */
-  bottom: 1%;            /* adjust as needed */
-  left: 42%;           /* adjust as needed */
-  z-index: 10;          /* makes sure it's above the white box */
-}
 #rectangle{
   background-color: #F3EFF9;
   padding: 3%;
@@ -64,4 +68,28 @@ body{
   font-family: "Cormorant Upright", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Image Section */
+.image-list {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;   /* lets them wrap if screen is small */
+  gap: 1rem;         /* spacing between items */
+  justify-content: center;
+}
+
+.image-list li {
+  text-align: center;
+  font-family: "Cormorant Upright", serif;
+  font-size: 18px;
+  color: black;
+}
+
+.image-list img {
+  display: block;
+  max-width: 200px;   /* control image size */
+  border-radius: 10px;
 }
