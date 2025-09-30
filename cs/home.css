@@ -59,22 +59,40 @@ body{
   left: 0;
   width: 100%;
 }
-#Italianno{
+
+.Italianno{
     font-family: "Italianno", cursive;
     font-weight: 400;
     font-style: normal;
 }
-#CormorantUp{
+
+.CormorantUp{
   font-family: "Cormorant Upright", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+#cor{
+  font-family: "Cormorant Upright", serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  padding: 0%;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#tail{
+  font-size: 64px;
+  padding: 0%;
+  line-height: 70%; /* 44.8px */
+  text-align: center;
 }
 
 /* Image Section */
 .image-list {
   list-style: none;
   margin: 2rem auto;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;   /* lets them wrap if screen is small */
   gap: 1rem;         /* spacing between items */
@@ -93,3 +111,22 @@ body{
   max-width: 200px;   /* control image size */
   border-radius: 10px;
 }
+
+#rhs p {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+
+}
+
+#button-common{
+  color: rgb(0, 0, 0);
+  background-color: hsla(267, 43%, 96%, 0);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;  
+  width: 89%;
+  display: block;
+  justify-self: center;
+  border-radius: 10px;
+  width: fit-content;
+}
+
