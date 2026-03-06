@@ -4,6 +4,12 @@ const submitButton = document.getElementById("submit");
 // Store all submissions here
 const list = [];
 
+
+
+// UPDATION //
+
+
+
 function subData(event) {
   event.preventDefault(); // stop page reload
 

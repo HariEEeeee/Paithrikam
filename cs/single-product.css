@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: "Cormorant Upright", serif;
+  background: #fff;
+}
+
+
+.logo {
+  font-family: "Italianno";
+  font-size: 40px;
+  color: white;
+}
+
+/* MAIN PRODUCT */
+.product-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* IMAGES */
+.product-images {
+  width: 45%;
+}
+
+.main-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.thumbs {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.thumbs img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* INFO */
+.product-info {
+  width: 45%;
+}
+
+.price {
+  font-size: 22px;
+}
+
+.original {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 10px;
+}
+
+.discount {
+  color: #e60000;
+  font-weight: bold;
+}
+
+/* SIZES */
+.size-buttons button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+}
+
+/* DELIVERY */
+.delivery p {
+  margin: 6px 0;
+}
+
+/* BUTTONS */
+.actions button {
+  padding: 12px 25px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* DESCRIPTION */
+.description {
+  padding: 30px;
+}
+
+/* REVIEWS */
+.reviews {
+  padding: 30px;
+  background: #fff0f5;
+}
+
+.review-box {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#button-common{
+  color: rgb(0, 0, 0);
+  background-color: hsla(267, 43%, 96%, 0);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 89%;
+  display: block;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.star {
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.star.active {
+  opacity: 1;
+}
+
+.delete-btn {
+  margin-top: 8px;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.size-buttons button {
+  border: 1px solid #999;
+  background: white;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.size-buttons button.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+

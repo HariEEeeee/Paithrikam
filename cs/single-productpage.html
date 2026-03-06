@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CS Stitching | Product</title>
+  <link rel="stylesheet" href="single-product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Cormorant+Upright:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <!-- PRODUCT MAIN -->
+  <section class="product-page">
+
+    <!-- LEFT: IMAGES -->
+    <div class="product-images">
+      <img id="mainImage" src="" class="main-img">
+
+      <div class="thumbs">
+        <img onclick="changeImage(this.src)">
+        <img onclick="changeImage(this.src)">
+        <img onclick="changeImage(this.src)">
+        <img onclick="changeImage(this.src)">
+      </div>
+    </div>
+
+    <!-- RIGHT: DETAILS -->
+    <div class="product-info">
+      <h2 id="productName"></h2>
+
+      <p class="price">
+        <span class="original" id="originalPrice"></span>
+        <span class="discount" id="discountPrice"></span>
+      </p>
+
+      <!-- SIZE -->
+      <div class="sizes">
+        <p>Select Size</p>
+        <div class="size-buttons">
+          <button>XS</button>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>XXL</button>
+          <button>3XL</button>
+        </div>
+      </div>
+
+      <!-- DELIVERY INFO -->
+      <div class="delivery">
+        <p>✅ Free Delivery</p>
+        <p>🚚 Delivery in 5–7 Days</p>
+        <p>💵 Cash on Delivery Available</p>
+        <p>🔄 7 Days Return</p>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="actions">
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section class="description">
+    <h3>Product Description</h3>
+    <p id="productDesc"></p>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h3>Customer Reviews</h3>
+
+    <div class="review-box">
+      <p><b>Ananya</b> ⭐⭐⭐⭐⭐</p>
+      <p>Beautiful stitching and perfect fitting 💖</p>
+    </div>
+
+    <div class="review-box">
+      <p><b>Meera</b> ⭐⭐⭐⭐</p>
+      <p>Material is very soft and elegant.</p>
+    </div>
+
+    <!-- REVIEW FORM -->
+    <div class="review-form">
+      <h4>Add Your Review</h4>
+      <input type="text" placeholder="Your Name">
+      <textarea id="button" placeholder="Your Review"></textarea>
+      <button id="button-common">Submit</button>
+    </div> 
+
+  </section>
+
+  <script src="single-product.js"></script>
+</body>
+</html>

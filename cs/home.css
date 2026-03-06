@@ -1,132 +1,401 @@
+/* -------------------------
+   GLOBAL BASE STYLES
+-------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Cormorant Upright", serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.Italianno {
+  font-family: "Italianno", cursive;
+}
+
+.CormorantUP {
+  font-family: "Cormorant Upright", serif;
+}
+
+/* -------------------------
+   NAVIGATION + HERO
+-------------------------- */
+
 #navigation {
   background-color: rgba(255, 174, 211, 0.5);
   text-align: center;
-  padding: 0;   /* don’t add extra padding */
+  padding: 0;
 }
+
 #navigation h1 {
-  font-size: 50px;     /* smaller text, if you want */
+  font-size: 50px;
   color: #ffffff;
-  line-height: 1.2;    /* instead of 200% */
-  margin: 0;           /* remove default h1 margin */
-  padding: 5px 0;      /* control thickness manually */
+  margin: 0;
+  padding: 5px 0;
 }
 
 #hero {
-  background-image: url(/cs-stitchings/src/cs/Assets/girl.png);
-  background-size: cover;     /* cover full screen */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.913) 0%,
+      rgba(0, 0, 0, 0.345) 18%,
+      rgba(0, 0, 0, 0.174) 25%,
+      rgba(0, 0, 0, 0.08) 40%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    url("Designs_/new2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
-  height: 100vh;              /* full screen height */
+  height: 100vh;
   position: relative;
   color: white;
 }
-#hero #seal{
-  display:flex;
-  justify-content: center;
-  padding-top: 20%;
-  padding-bottom: 0%;
-}
-body {
-  overflow-x: hidden; /* Prevents horizontal scroll */
-}
-body{
-    margin: 0%;
-    padding: 0%;
-}
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
+
 .navbar ul {
   display: flex;
-  justify-content: center; /* this is what centers them horizontally */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 0;
+  margin: 0;
+  list-style: none;
 }
 
 .navbar a {
-  font-size: large;
-  text-decoration: none;  /* removes underline */
-  color: white;           /* text color */
-  padding: 10px 20px;     /* gives clickable area */
-  display: block;         /* makes padding work fully */
+  font-size: 18px;
+  color: white;
+  padding: 8px 15px;
 }
 
-#rectangle{
-  background-color: #F3EFF9;
-  padding: 3%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
+/* ===== CATEGORY LIST (RESPONSIVE) ===== */
 
-.Italianno{
-    font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.CormorantUp{
-  font-family: "Cormorant Upright", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-#cor{
-  font-family: "Cormorant Upright", serif;
-  font-weight: 400;
-  font-size: 20px;
-  font-style: normal;
-  padding: 0%;
-  padding-bottom: 30px;
-  text-align: center;
-}
-
-#tail{
-  font-size: 64px;
-  padding: 0%;
-  line-height: 70%; /* 44.8px */
-  text-align: center;
-}
-
-/* Image Section */
 .image-list {
   list-style: none;
   margin: 2rem auto;
   display: flex;
-  flex-wrap: wrap;   /* lets them wrap if screen is small */
-  gap: 1rem;         /* spacing between items */
+  flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
+  padding: 0;
 }
 
+/* Each item same width as the image */
 .image-list li {
+  position: relative;
   text-align: center;
-  font-family: "Cormorant Upright", serif;
-  font-size: 18px;
-  color: black;
+  width: 200px;
 }
 
+/* Image always fills card */
 .image-list img {
-  display: block;
-  max-width: 200px;   /* control image size */
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Text overlay */
+.image-list li p {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  padding: 0.3em 0;
+  font-family: 'Cormorant Infant', serif;
+}
+
+/* ========== TABLET (2 per row) ========== */
+@media (max-width: 900px) {
+  .image-list li {
+    width: 45%; /* two items per row */
+  }
+
+  .image-list li p {
+    font-size: 17px;
+  }
+}
+
+/* ========== MOBILE (1 per row) ========== */
+@media (max-width: 600px) {
+  .image-list li {
+    width: 80%; /* one per row */
+  }
+
+  .image-list li p {
+    font-size: 16px;
+  }
+}
+
+/* -------------------------
+   PAGE 2 (TAILOR)
+-------------------------- */
+
+#page2 {
+  padding: 40px 20px;
+}
+
+#mainbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* mobile fix */
 }
 
 #rhs p {
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-
+  margin: 0.3em 0;
 }
 
-#button-common{
-  color: rgb(0, 0, 0);
-  background-color: hsla(267, 43%, 96%, 0);
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px;  
-  width: 89%;
-  display: block;
-  justify-self: center;
+#tail {
+  font-size: 64px;
+  line-height: 70%;
+  text-align: center;
+}
+
+#cor {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#button-common {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 10px 25px;
   border-radius: 10px;
-  width: fit-content;
+  margin: 0 auto;
+  display: block;
+  font-size: 18px;
 }
 
+/* -------------------------
+   FEEDBACK SLIDER
+-------------------------- */
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+}
+
+#divforfeedtext{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 25s linear infinite;
+}
+
+.slide-track .feedboxes {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.feedboxes {
+  background-color: #FFB7D8;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.feedboxes hr {
+  border: none;
+  border-top: 2px solid #F3EFF9;
+}
+
+/* -------------------------
+   PRODUCT GRID
+-------------------------- */
+
+#products {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+#products p {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+#product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: left;
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card p {
+  margin: 5px;
+  font-family: "Italianno", serif;
+  font-size: 1%;
+}
+
+.images {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.insta-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.05s linear;
+  pointer-events: none;
+}
+
+
+
+
+.custom-shape-divider-bottom-1772377453 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1772377453 svg {
+    position: relative;
+    display: block;
+    width: calc(115% + 1.3px);
+    height: 249px;
+}
+
+.custom-shape-divider-bottom-1772377453 .shape-fill {
+    fill: #224939;
+}
+
+.lotus {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+
+
+/* -------------------------
+   INLINE VIDEOS
+-------------------------- */
+
+#inlinefl {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.video {
+  width: 280px;
+  border-radius: 10px;
+}
+
+
+
+
+/* -------------------------
+   RESPONSIVENESS
+-------------------------- */
+
+/* ---------- MOBILE (0–600px) ---------- */
+@media (max-width: 600px) {
+  #navigation h1 {
+    font-size: 36px;
+  }
+
+  .navbar ul {
+    gap: 10px;
+  }
+
+  #tail {
+    font-size: 40px;
+    line-height: 90%;
+  }
+
+  #cor {
+    font-size: 16px;
+  }
+
+  .image-list img {
+    max-width: 150px;
+  }
+
+  .slider {
+    padding: 10px 0;
+  }
+
+  .feedboxes {
+    width: 200px;
+  }
+
+  #product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video {
+    width: 90%;
+  }
+}
+
+/* ---------- TABLET (600–900px) ---------- */
+@media (max-width: 900px) {
+  #mainbox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #tail {
+    font-size: 50px;
+  }
+
+  #product-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- LARGE DESKTOP (1200px+) ---------- */
+@media (min-width: 1200px) {
+  #product-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}

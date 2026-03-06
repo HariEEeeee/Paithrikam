@@ -1,0 +1,206 @@
+#navigation {
+  background-color: rgb(255, 174, 210);
+  text-align: center;
+  padding: 0;   /* don’t add extra padding */
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center; /* horizontally center content */
+  min-height: 10px; /* set a minimum height for vertical centering */
+}
+.navbar a {
+  font-size: large;
+  text-decoration: none;  /* removes underline */
+  color: white;           /* text color */
+  padding: 10px 20px;     /* gives clickable area */
+  display: block;         /* makes padding work fully */
+}
+
+h1{
+  font-size:40px;     /* smaller text, if you want */
+  color: #ffffff;
+  line-height: 1.2;    /* instead of 200% */
+  margin: 0;           /* remove default h1 margin */
+  padding: 5px 0;      /* control thickness manually */
+}
+body{
+  background-color: #fff0ff;
+  margin:0%;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center; /* this is what centers them horizontally */
+}
+.navbar a {
+  font-size: 15px;
+  text-decoration: none;  /* removes underline */
+  color: rgb(0, 0, 0);           /* text color */
+  padding: 10px 20px;     /* gives clickable area */
+  display: block;         /* makes padding work fully */
+}
+#Italianno{
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+#CormorantUp{
+  font-family: "Cormorant Upright", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* contents from the cart */
+#container{
+  display: flex;
+  gap: 30px;
+}
+
+#cart{
+  margin: 3%;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+#clothname{
+  font-size: larger;
+}
+
+#datas p{
+  margin: 2px;
+  padding-top: 2%;
+}
+
+#box{
+  display: flex;
+}
+
+#button{
+  
+}
+
+.img{
+  width: 200px;
+  height: 270px;
+  padding: 5%;
+}
+
+#QUANTITY{
+  padding-top: 20px;
+}
+
+
+#Italianno {
+  font-family: 'Italianno', cursive;
+}
+#CormorantUp {
+  font-family: 'Cormorant Upright', serif;
+}
+
+/* CART LAYOUT */
+#container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+#cart {
+  flex: 1 1 60%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+#cart .product {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+.img {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+#datas {
+  flex: 1;
+}
+#clothname {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+#datas p {
+  margin: 2px 0;
+}
+#QUANTITY {
+  margin-top: 10px;
+}
+
+/* PRICE SUMMARY */
+#price-summary {
+  flex: 1 1 35%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  height: fit-content;
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.price-row.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+#price-summary hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 12px 0;
+}
+#checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.3s;
+}
+#checkout-btn:hover {
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #container {
+    flex-direction: column;
+  }
+  #cart, #price-summary {
+    flex: 1 1 100%;
+  }
+  .navbar ul {
+    flex-direction: column
+  }
+#maindiv p {
+    font-family: 'Italianno', cursive;  /* elegant cursive font */
+    font-size: 48px;                     /* big, eye-catching size */
+    font-weight: 400;
+    text-align: center;                  /* center in the div */
+    color: #000;                         /* black text for H&M style */
+    margin: 20px 0;                      /* spacing above and below */
+    letter-spacing: 1px;              /* subtle spacing between letters */
+}

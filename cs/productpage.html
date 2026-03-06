@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS Stitchings - Product Page</title>
+  <link rel="icon" href="Assets/CS stitching-logo.jpg">
+  <link rel="stylesheet" href="product.css"/>
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="Assets/footer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div id="navigation">
+            <h1 id="Italianno">CS Stitching</h1>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li class="CormorantUp"><a href="home.html">Home</a></li>
+                <li class="CormorantUp"><a href="productpage.html">Wear The Look</a></li>
+                <li class="CormorantUp"><a href="Moments_captured.html">Moments Captured</a></li>
+                <li class="CormorantUp"><a href="ourStory.html">Our Story</a></li>
+                <li class="CormorantUp"><a href="ReachToUs.html">Reach Us</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- PRODUCT SECTION -->
+    <main id="products">
+        <h2 class="CormorantUp">Our Hottest Collections!</h2>
+        <div id="product-container">
+            <div class="card">
+                <video class="images" src="cloths/pink.mp4" autoplay loop muted controls></video>
+                <a href="single-productpage.html?id=1">
+                    <p>Blush Pink Everyday Dress</p>
+                    <p>₹899</p>
+                </a>
+            </div>
+            <div class="card">
+                <video class="images" src="cloths/greenie.mp4" autoplay loop muted controls></video>
+                <a href="single-productpage.html?id=9">
+                    <p>Olive Green Casual Wear</p>
+                    <p>₹899</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <video class="images" src="cloths/emmi.mp4" autoplay loop muted controls></video>
+                <a href="single-productpage.html?id=3">
+                    <p>Royal Rose Dress</p>
+                    <p>₹999</p>
+                </a>
+            </div>
+            <div class="card">
+                <video class="images" src="cloths/purp.mp4" autoplay loop muted controls></video>
+                <a href="single-productpage.html?id=16">
+                <p>Snowy Sunset</p>
+                <p>₹649</p>
+                </a>
+            </div>
+            
+        </div>
+    </main>
+    <!--MENU BUTTON
+    <main>
+        <div id="dropsideMenu">
+            <button onclick="displayfilter()" id="menu">MENU</button>
+            <!--SECTIONS
+                <div id="contents">
+                    <p>Categorize your product</p>
+                    <div class="inline">
+                        <h3>Product Type</h3>
+                        <img id="lotus" src="Assets/Lotus Flower.png" alt="lotus img">
+                    </div>
+                    <div id="flex-fo_inputs">
+                        <div class="inline">
+                            <p>Dresses</p>
+                            <input id="Dresses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>Kurtis</p>
+                            <input id="Kurtis" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>Sarees</p>
+                            <input id="Sarees" type="checkbox">
+                        </div>
+                        <br>
+                        <div class="inline">
+                            <p>Tops & Tunics</p>
+                            <input id="Tops_Tunics" type="checkbox">
+                        </div>
+        
+                        <div class="inline">
+                            <p>Bottoms</p>
+                            <input id="Bottoms" type="checkbox">
+                        </div>
+
+                        <br>
+                        <div class="inline">
+                            <p>Co-ords/sets</p>
+                            <input id="Co-ords" type="checkbox">
+                        </div>
+                        <div class="inline">
+                            <p>Blouses</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+                        <br>
+                <!--SECTION2
+                    <div class="inline">
+                        <h3>Size</h3>
+                        <img id="lotus" src="Assets/Lotus-2.png" alt="lotus img">
+                    </div>
+                    <div id="flex-fo_inputs">
+                        <div class="inline">
+                            <p>M</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>L</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>XL</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>XXL</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>S</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <br>
+                        <div class="inline">
+                            <p>XS</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+                        <div class="inline">
+                            <p>3XL</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+
+                        <div class="inline">
+                            <p>Custom Size</p>
+                            <input id="Blouses" type="checkbox">
+                        </div>
+                    </div>
+
+                    <!--SECTION4
+                        <div class="inline">
+                            <h3>Price range</h3>
+                            <img id="lotus" src="Assets/Lotus-4.png" alt="lotus img">
+                        </div> 
+                        <div id="flex-fo_inputs">
+                            <!--contents goes here
+                            <div class="price-range-container">
+                                <div class="slider">
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="range-input">
+                                    <input type="range" class="range-min" min="0" max="5000" value="0" step="100">
+                                    <input type="range" class="range-max" min="0" max="5000" value="2000" step="100">
+                                </div>
+                                <div class="price-values">
+                                    <span>₹<span id="minPrice"></span></span> - 
+                                    <span>₹<span id="maxPrice"></span></span>
+                                </div>
+                            </div>
+                <!--SECTION3
+                    <div class="inline">
+                        <h3>Fabric Type</h3>
+                        <img id="lotus" src="Assets/Lotus-3.png" alt="lotus img">
+                    </div>   
+                    <div id="flex-fo_inputs">
+                        <div class="inline">
+                            <p>Cotton</p>
+                            <input id="Cotton" type="checkbox">
+                        </div> 
+                        <div class="inline">
+                                <p>Silk</p>
+                                <input id="Silk" type="checkbox">
+                            </div> 
+                            <div class="inline">
+                                <p>Georgette</p>
+                                <input id="Georgette" type="checkbox">
+                            </div> 
+                            <br>
+                            <div class="inline">
+                                <p>Organza</p>
+                                <input id="Organza" type="checkbox">
+                            </div> 
+                            <div class="inline">
+                                <p>Net</p>
+                                <input id="Net" type="checkbox">
+                            </div> 
+                            <div class="inline">
+                                <p>Linen</p>
+                                <input id="Linen" type="checkbox">
+                            </div> 
+                            <br>
+                            <div class="inline">
+                                <p>Rayon</p>
+                                <input id="Rayon" type="checkbox">
+                            </div>
+                            <div class="inline">
+                                <p>Satin</p>
+                                <input id="Satin" type="checkbox">
+                            </div>
+                            <div class="inline">
+                                <p>Velvet</p>
+                                <input id="Velvet" type="checkbox">
+                            </div>
+                            <br>
+
+                    </div> 
+                    
+
+                </div>
+        </div>
+    </main>
+
+    <!--DRESS SECTION-->
+    <section>
+         <div id="title" class="CormorantUp">Wear The Look</div>
+         <main id="products">
+            <div id="container">
+                
+                <div class="card">
+                <a href="single-productpage.html?id=1">
+                    <img class="images" src="cloths/aaa.jpg" alt="Product Image">
+                    <p>Blush Pink Everyday Dress</p>
+                    <p> ₹899</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=2">
+                    <img class="images" src="Assets/Assets/dresssss/11.jpg" alt="Product Image">
+                    <p>Ivory Kurti</p>
+                    <p>₹699</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=3">
+                    <img class="images" src="cloths/emm.jpg" alt="Product Image">
+                    <p>Royal Rose Dress</p>
+                    <p> ₹999</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=4">
+                    <img class="images" src="cloths/churidar.jpg" alt="Product Image">
+                    <p>Dotted Bluey</p>
+                    <p>₹1099</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=5">
+                    <img class="images" src="cloths/purple.jpg" alt="Product Image">
+                    <p>Royal Purple Straight Dress</p>
+                    <p>1199</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=6">
+                    <img class="images" src="Assets/Assets/dresssss/WhatsApp Image 2025-06-05 at 20.39.21_9d633e71 - Copy.jpg" alt="Product Image">
+                    <p>Orange Honey</p>
+                    <p>₹540</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=7">
+                    <img class="images" src="cloths/aaaaaaaaa.jpg" alt="Product Image">
+                    <p>Rosé Whisper Dress</p>
+                    <p>₹629</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=8">
+                    <img class="images" src="Assets/Assets/dresssss/WhatsApp Image 2025-07-14 at 20.32.18_ec9589f4.jpg" alt="Product Image">
+                    <p>Autumn Check Midi</p>
+                    <p>₹769</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=9">
+                    <img class="images" src="cloths/Screenshot 2025-12-07 160222.png" alt="Product Image">
+                    <p>Olive Green Casual Wear</p>
+                    <p>₹899</p>
+                </a>
+                </div>
+
+                <div class="card">
+                <a href="single-productpage.html?id=10">
+                    <img class="images" src="Assets/Assets/dresssss/WhatsApp Image 2025-07-14 at 20.33.41_127a199c.jpg" alt="Product Image">
+                    <p>Earthline Casual Co-ord</p>
+                    <p>₹499</p>
+                </a>
+                </div>
+                <a href="single-productpage.html?id=11" class="card-link">
+                <div class="card" id="instavideo">
+                    <img class="images" src="Designs_/green.jpg" alt="Lime Whisper Dress">
+                    <p>Lime Whisper</p>
+                    <p>₹799</p>
+                </div>
+                </a>
+
+                <a href="single-productpage.html?id=12" class="card-link">
+                <div class="card">
+                    <img class="images" src="Assets/Assets/newone.jpg" alt="Garden Muse Kurti">
+                    <p>Garden Muse</p>
+                    <p>₹749</p>
+                </div>
+                </a>
+
+                <a href="single-productpage.html?id=13" class="card-link">
+                <div class="card">
+                    <img class="images" src="Assets/Assets/dresssss/updatedone.jpg" alt="Sunpetal Charm Dress">
+                    <p>Sunpetal Charm</p>
+                    <p>₹799</p>
+                </div>
+                </a>
+
+                <a href="single-productpage.html?id=14" class="card-link">
+                <div class="card">
+                    <img class="images" src="Assets/Assets/cloths/neela.jpg" alt="Garden Muse Kurti">
+                    <p>Midnight Dream</p>
+                    <p>₹999</p>
+                </div>
+                </a>
+
+                <a href="single-productpage.html?id=15" class="card-link">
+                <div class="card">
+                    <img class="images" src="Assets/Assets/dresssss/red.jpg" alt="Garden Muse Kurti">
+                    <p>BloodRed Dress</p>
+                    <p>₹1099</p>
+                </div>
+                </a>
+            </div>
+        </main>
+    </section>
+    <section>
+        <div id="Our-festive-Collections">
+            <p>Our festive Collections</p>
+            <!-- video -->
+        </div>
+    </section>
+
+
+
+
+<script>
+    const rangeMin = document.querySelector(".range-min");
+    const rangeMax = document.querySelector(".range-max");
+    const progress = document.querySelector(".slider .progress");
+    const minPriceDisplay = document.getElementById("minPrice");
+    const maxPriceDisplay = document.getElementById("maxPrice");
+
+    let priceGap = 500;
+
+    function updateSlider() {
+        let minVal = parseInt(rangeMin.value);
+        let maxVal = parseInt(rangeMax.value);
+
+        if (maxVal - minVal < priceGap) {
+        if (event.target.classList.contains("range-min")) {
+            rangeMin.value = maxVal - priceGap;
+        } else {
+            rangeMax.value = minVal + priceGap;
+        }
+        } else {
+        progress.style.left = (rangeMin.value / rangeMin.max) * 100 + "%";
+        progress.style.right = 100 - (rangeMax.value / rangeMax.max) * 100 + "%";
+        minPriceDisplay.textContent = rangeMin.value;
+        maxPriceDisplay.textContent = rangeMax.value;
+        }
+    }
+
+    rangeMin.addEventListener("input", updateSlider);
+    rangeMax.addEventListener("input", updateSlider);
+
+    // initialize
+    updateSlider();
+    let element = document.getElementById("contents")
+    function displayfilter() {
+        element.classList.toggle("show")
+    }
+</script>
+</body>
+</html>
