@@ -4,7 +4,7 @@ body {
   background: #fff;
 }
 
-
+/* LOGO */
 .logo {
   font-family: "Italianno";
   font-size: 40px;
@@ -17,16 +17,20 @@ body {
   gap: 40px;
   padding: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* IMAGES */
 .product-images {
-  width: 45%;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .main-img {
   width: 100%;
-  height: 420px;
+  height: auto;
+  max-height: 500px;
   object-fit: cover;
 }
 
@@ -34,11 +38,12 @@ body {
   margin-top: 10px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .thumbs img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   cursor: pointer;
   border: 1px solid #ccc;
@@ -46,7 +51,9 @@ body {
 
 /* INFO */
 .product-info {
-  width: 45%;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .price {
@@ -65,12 +72,23 @@ body {
 }
 
 /* SIZES */
+.size-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .size-buttons button {
-  padding: 8px 14px;
-  margin: 5px;
-  border: 1px solid black;
+  border: 1px solid #999;
   background: white;
+  padding: 8px 14px;
   cursor: pointer;
+}
+
+.size-buttons button.active {
+  background: black;
+  color: white;
+  border-color: black;
 }
 
 /* DELIVERY */
@@ -79,6 +97,10 @@ body {
 }
 
 /* BUTTONS */
+.actions {
+  margin-top: 15px;
+}
+
 .actions button {
   padding: 12px 25px;
   border: none;
@@ -111,19 +133,17 @@ body {
   padding: 10px;
 }
 
-#button-common{
-  color: rgb(0, 0, 0);
-  background-color: hsla(267, 43%, 96%, 0);
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 89%;
-  display: block;
+#button-common {
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 10px 15px;
+  display: inline-block;
   border-radius: 10px;
   width: fit-content;
 }
 
+/* STARS */
 .star {
   font-size: 20px;
   cursor: pointer;
@@ -134,6 +154,7 @@ body {
   opacity: 1;
 }
 
+/* DELETE BUTTON */
 .delete-btn {
   margin-top: 8px;
   background: #ff4d4d;
@@ -144,16 +165,52 @@ body {
   border-radius: 4px;
 }
 
-.size-buttons button {
-  border: 1px solid #999;
-  background: white;
-  padding: 8px 14px;
-  cursor: pointer;
+/* ------------------ */
+/* MOBILE RESPONSIVE  */
+/* ------------------ */
+
+@media (max-width: 768px) {
+
+  .product-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .product-images,
+  .product-info {
+    max-width: 100%;
+  }
+
+  .thumbs img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
 }
 
-.size-buttons button.active {
-  background: black;
-  color: white;
-  border-color: black;
-}
+/* EXTRA SMALL DEVICES */
 
+@media (max-width: 480px) {
+
+  .product-page {
+    gap: 20px;
+  }
+
+  .thumbs img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+}

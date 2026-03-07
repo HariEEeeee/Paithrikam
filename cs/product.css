@@ -7,9 +7,10 @@ body {
 /* HERO SECTION */
 #hero {
     position: relative;
-    height: 100vh; /* full screen height */
+    height: 100vh;
     overflow: hidden;
 }
+
 #bg-video {
     position: absolute;
     top: 0;
@@ -19,8 +20,9 @@ body {
     object-fit: cover;
     z-index: -1;
 }
+
 #navigation {
-    background-color: rgba(255, 174, 210, 0.8); /* semi-transparent */
+    background-color: rgba(255, 174, 210, 0.8);
     color: aliceblue;
     text-align: center;
     padding: 10px;
@@ -28,6 +30,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Title */
 h1 {
     font-size: 40px;
 }
@@ -39,90 +43,106 @@ h1 {
     padding: 10px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
 .navbar a {
     font-size: large;
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     display: block;
+    transition: all 0.25s ease;
 }
+
 .navbar a:hover {
-    transition-duration: 5s;
-    font-size: larger;
     text-decoration: underline;
-    color: #ffffff;
 }
 
 /* Fonts */
 #Italianno {
     font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;
 }
+
 .CormorantUp {
     font-family: "Cormorant Upright", serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 /* PRODUCT SECTION */
 #products {
-    background-color: rgb(255, 255, 255);  /* distinct background from hero */
+    background-color: white;
     padding: 60px 20px;
     text-align: center;
 }
+
 #products h2 {
     font-size: 32px;
     margin-bottom: 40px;
 }
+
+/* PRODUCT GRID */
 #product-container {
     display: grid;
-    justify-content: center;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
+    padding: 20px;
 }
+
+/* PRODUCT CARD */
 .card {
     border: 1px solid white;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     border-radius: 8px;
-    text-align:left;
-    width: 200px;
+    text-align: left;
+    width: 100%;
+    max-width: 260px;
+    margin: auto;
+    transition: 0.2s ease;
 }
-#card :hover{
+
+.card:hover {
     border: 1px solid #ffaeae;
 }
+
 .card p{
     margin: 5px;
 }
+
+/* PRODUCT IMAGE */
 .images {
   width: 100%;
-  height: 250px;   /* fixed height */
-  object-fit: cover;  /* crops to fit */
-  border-radius: 0px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
 }
+
+/* GRID CONTAINER */
 #container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     justify-content: center;
     padding: 20px;
 }
+
 .inline{
   display: inline-flex;
 }
 
-/* Adjust lotus image aspect ratio */
+/* LOTUS IMAGE */
 #lotus {
-  width: 50px;    /* set a reasonable width */
-  height: auto;    /* maintain aspect ratio */
-  object-fit: contain; /* prevent stretching */
+  width: 50px;
+  height: auto;
+  object-fit: contain;
 }
+
+/* TEXT */
 p{
   margin: 0%;
   font-family: "Italianno";
   font-size: 20px;
 }
+
 #inline{
   display: flex;
 }
@@ -132,6 +152,7 @@ p{
   font-size: 18px;
 }
 
+/* PRICE RANGE */
 .price-range-container {
   width: 210px;
   margin-top: 15px;
@@ -148,7 +169,7 @@ p{
 .slider .progress {
   position: absolute;
   height: 100%;
-  background: #ffaeae; /* earthy brown tone */
+  background: #ffaeae;
   border-radius: 5px;
   left: 20%;
   right: 20%;
@@ -193,6 +214,7 @@ p{
   font-weight: 500;
 }
 
+/* DROPDOWN CONTENT */
 #contents{
   display: none;
 }
@@ -203,105 +225,86 @@ p{
   color: #ddd;
 }
 
+/* FESTIVE COLLECTION */
 #Our-festive-Collections{
   background-color: #ffaecd;
   padding: 1%;
-
 }
+
 #Our-festive-Collections p{
   text-align: center;
   color: #ddd;
 }
 
+/* LINKS */
 a{
   text-decoration: none;
   color: black;
 }
+
+/* TITLE */
 #title{
   padding-top: 20px;
   font-size: 40px;
   justify-self: center;
 }
+
 /* =========================
-   MOBILE RESPONSIVE FIXES
+   MOBILE RESPONSIVE
    ========================= */
 
 @media (max-width: 768px) {
 
-  /* Body */
-  body {
+  body{
     overflow-x: hidden;
   }
 
-  /* HERO */
-  #hero {
-    height: 80vh;
+  #hero{
+    height: 70vh;
   }
 
-  h1 {
+  h1{
     font-size: 28px;
     text-align: center;
   }
 
-  /* NAVBAR */
-  #navigation {
+  #navigation{
     flex-direction: column;
     padding: 12px;
   }
 
-  .navbar ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-  }
-
-  .navbar a {
+  .navbar a{
     font-size: 16px;
     padding: 6px 10px;
   }
 
-  /* PRODUCTS SECTION */
-  #product-container {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
-    padding: 10px;
+  .images{
+    aspect-ratio: 3/4;
   }
 
-  .card {
-    width: 100%;
-  }
-
-  .images {
-    height: 200px;
-  }
-
-  /* TEXT */
-  p {
+  p{
     font-size: 16px;
   }
 
-  #title {
+  #title{
     font-size: 28px;
     text-align: center;
   }
 
-  /* FILTER / RANGE */
-  .price-range-container {
+  .price-range-container{
     width: 100%;
   }
 
-  /* LOTUS IMAGE */
-  #lotus {
+  #lotus{
     width: 36px;
   }
 
-  /* FESTIVE SECTION */
-  #Our-festive-Collections {
+  #Our-festive-Collections{
     padding: 10px;
   }
 
-  #Our-festive-Collections p {
+  #Our-festive-Collections p{
     font-size: 16px;
   }
+
 }
