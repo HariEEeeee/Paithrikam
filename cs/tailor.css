@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Cormorant Upright", serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.Italianno {
+  font-family: "Italianno", cursive;
+}
+
+.CormorantUP {
+  font-family: "Cormorant Upright", serif;
+}
+
+/* -------------------------
+   NAVIGATION + HERO
+-------------------------- */
+
+#navigation {
+  background-color: rgba(255, 174, 211, 0.5);
+  text-align: center;
+  padding: 0;
+}
+
+#navigation h1 {
+  font-size: 50px;
+  color: #ffffff;
+  margin: 0;
+  padding: 5px 0;
+}
+
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  padding: 8px 15px;
+}
+
+#main{
+ align-self: center;
+}
+
+
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.cta-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: #fd5397;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #e91e63;
+    transform: scale(1.05);
+}
+
