@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  cursor: none;
+}
+
+body {
+  background: #ffffff;
+  color: #ffffff;
+}
+body {
+  cursor: none;
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+#firstpage{
+  background-image: url("assets/firefly2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background: rgb(255, 240, 73);
+  color: rgb(255, 255, 255);
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  transition: 
+    width 0.2s ease,
+    height 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Typing animation */
+ 
+#typing::after {
+  content: '|';
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+#flexin{
+  text-align: center;
+  transform: translateX(-190px); /* adjust this */
+}
+
+#firstpage {
+  height: 100vh; /* full screen */
+
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+}
