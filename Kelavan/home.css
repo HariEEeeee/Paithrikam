@@ -7,11 +7,12 @@
 }
 
 body {
-  background: #ffffff;
-  color: #ffffff;
+  background: #000;
+  color: #fff;
 }
-body {
-  cursor: none;
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -19,56 +20,103 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #fff;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #fff;
 }
 
-#firstpage{
+/* FIRST PAGE */
+#firstpage {
   background-image: url("assets/firefly2.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#flexin {
+  text-align: center;
+  transform: translateX(-150px);
+}
+
+
+/* ABOUT SECTION */
+#about {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+  text-align: center;
+}
+
+.about-content {
+  z-index: 2;
+  max-width: 700px;
+}
+
+.about-content h1 {
+  font-size: 4rem;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* BLOBS */
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,190,50,0.6), transparent 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Starting positions */
+.b1 { top: 20%; left: 10%; }
+.b2 { top: 60%; left: 70%; }
+.b3 { top: 40%; left: 40%; }
+
+
+
+
+/* CURSOR */
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 20px;
   height: 20px;
-
   background: rgb(255, 240, 73);
-  color: rgb(255, 255, 255);
-
   border-radius: 50%;
   transform: translate(-50%, -50%);
-
   pointer-events: none;
   z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 8px;
-  font-weight: 500;
 
   transition: 
     width 0.2s ease,
     height 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
+    background 0.2s ease;
 }
 
-/* Typing animation */
- 
+/* TYPING CURSOR */
 #typing::after {
   content: '|';
   margin-left: 5px;
@@ -79,15 +127,125 @@ nav a {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
-#flexin{
-  text-align: center;
-  transform: translateX(-190px); /* adjust this */
+
+/* POSTERS SECTION */
+#posters {
+  height: 250vh;
+  position: relative;
+  background: black;
+  overflow: hidden;
 }
 
-#firstpage {
-  height: 100vh; /* full screen */
+.poster {
+  position: absolute;
+  width: 340px;   /* FIXED width → stability */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
 
-  display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.poster:hover {
+  transform: scale(1.05);
+}
+/* POSITIONS */
+
+/* POSITIONS (REFINED) */
+
+.p1 { top: 8%; left: 8%; }
+
+/* Kidnap → moved UP */
+.p2 { top: 22%; left: 58%; }
+
+/* Hangover → slightly up */
+.p3 { top: 54%; left: 10%; }
+
+/* Smrithi → more up */
+.p4 { top: 58%; left: 60%; }
+
+/* DD → moved DOWN */
+.p5 { top: 94%; left: 18%; }
+
+
+/* FILM TEXT BLOCKS */
+.film-text {
+  position: absolute;
+  width: 300px;
+  color: #ddd;
+  z-index: 2;
+}
+
+.film-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-family: "EB Garamond", serif;
+}
+
+.film-text p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #aaa;
+}
+
+/* POSITION (opposite layout) */
+.t1 { top: 8%; right: 10%; }
+.t2 { top: 28%; left: 10%; }
+.t3 { top: 50%; right: 12%; }
+.t4 { top: 70%; left: 12%; }
+.t5 { top: 88%; right: 10%; }
+
+.poster {
+  z-index: 1;
+}
+
+.film-text {
+  z-index: 2;
+}
+
+#viewWorks {
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* 👇 subtle base glow */
+  box-shadow: 0 0 8px rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+}
+
+/* HOVER GLOW */
+#viewWorks:hover {
+  background: rgba(255,255,255,0.05);
+
+  /* 👇 stronger glow on hover */
+  box-shadow: 
+    0 0 12px rgba(255,255,255,0.3),
+    0 0 25px rgba(255,255,255,0.15);
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 6px rgba(255,255,255,0.15);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255,255,255,0.25);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(255,255,255,0.15);
+  }
+}
+
+#viewWorks {
+  animation: glowPulse 3s infinite ease-in-out;
 }

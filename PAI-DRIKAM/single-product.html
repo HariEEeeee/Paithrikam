@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="single-product.css">
+</head>
+<body>
+
+<section id="firstpage">
+    <header>
+    <div class="logo">PAI-DRIKAM</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Custom Orders</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    </header>
+    <hr>
+</section>
+
+<section id="product-page">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+
+    <div class="main-image">
+      <img id="productImg" src="collects/beds/1.jpeg">
+    </div>
+
+
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+
+    <h1 id="productName">Classic Wooden Bed</h1>
+
+    <p class="desc">
+      A beautifully handcrafted wooden bed designed for durability and elegance.
+    </p>
+
+    <h2 class="price">₹45,000</h2>
+
+    <!-- WOOD TYPE SELECTION -->
+    <div class="wood-types">
+      <p>Select Wood Type</p>
+      <div class="options">
+        <button onclick="selectWood(this)">Teak</button>
+        <button onclick="selectWood(this)">Oak</button>
+        <button onclick="selectWood(this)">Rosewood</button>
+        <button onclick="selectWood(this)">Pine</button>
+      </div>
+    </div>
+
+    <!-- SIZE -->
+    <div class="size">
+      <p><strong>Size:</strong> 6ft x 5ft</p>
+    </div>
+
+    <!-- CTA -->
+    <button class="cta">Contact to Order</button>
+
+  </div>
+
+</section>
+
+<!-- SEARCH ICON -->
+<div class="search-btn">
+  <img class="button" src="collects/search-interface-symbol.png">
+</div>
+
+<script src="single-product.js">
+</script>
+</body>
+</html>
