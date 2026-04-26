@@ -289,6 +289,98 @@ nav a {
   justify-self: center;
 }
 
+.custom-hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center/cover;
+  position: relative;
+  color: white;
+}
+
+/* overlay */
+.custom-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* content */
+.custom-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+}
+
+.custom-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.custom-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* WhatsApp CTA */
+.whatsapp-btn {
+  background: white;
+  color: black;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #e6e6e6;
+}
+
+/* INFO SECTION */
+.custom-info {
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: #f8f8f8;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  max-width: 280px;
+  text-align: center;
+}
+
+.info-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.info-box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .custom-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .custom-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 
 

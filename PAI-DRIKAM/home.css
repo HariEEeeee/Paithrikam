@@ -2,87 +2,150 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Georgia', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
-body {
-  background: #f5f1eb;
-  color: #2e2e2e;
+.hero {
+  height: 100vh;
+  background: url("collects/bg.jpeg") no-repeat center/cover;
+  position: relative;
+  color: white;
+}
+
+/* overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
 }
 
 /* NAVBAR */
 header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 60px;
-  background: #3e2f23;
-  color: white;
+  z-index: 10;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
 }
 
 nav a {
-  margin-left: 25px;
   text-decoration: none;
   color: white;
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #a67c52;
-  left: 0;
-  bottom: -5px;
+  font-size: 0.9rem;
+  opacity: 0.85;
   transition: 0.3s;
 }
 
-nav a:hover::after {
-  width: 100%;
+nav a:hover {
+  opacity: 1;
 }
 
-/* HERO */
-.hero {
-  height: 90vh;
-  background: url("collects/group.jpg") center/cover no-repeat;
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  padding: 60px;
-}
-
-.hero-text {
-  background: rgba(0,0,0,0.6);
-  padding: 40px;
-  color: white;
-  max-width: 500px;
-  border-radius: 10px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
-  opacity: 0.9;
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
 }
 
-.hero button {
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: #a67c52;
-  border: none;
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primary {
+  background: white;
+  color: black;
+}
+
+.secondary {
+  border: 1px solid white;
   color: white;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
   cursor: pointer;
-  border-radius: 5px;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: 0.3s;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
 }
 
 /* CATEGORIES */
@@ -224,3 +287,194 @@ nav a:hover::after {
   cursor: pointer;
 }
 
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 20px 30px;
+  }
+
+  .hero {
+    padding: 40px;
+    height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .category-grid {
+    flex-wrap: wrap;
+  }
+
+  .product-grid {
+    flex-wrap: wrap;
+  }
+
+  .trust-grid {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  /* HERO */
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* CATEGORIES */
+  .categories {
+    padding: 40px 20px;
+  }
+
+  .category-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: 180px;
+  }
+
+  /* PRODUCTS */
+  .products {
+    padding: 40px 20px;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+
+  /* TRUST */
+  .trust {
+    padding: 40px 20px;
+  }
+
+  .trust-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 40px 20px;
+  }
+
+  /* FOOTER */
+  #footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+}
+
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero button {
+    padding: 10px 18px;
+  }
+
+  .card {
+    height: 160px;
+  }
+
+  .img {
+    height: 120px;
+  }
+}
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #3e2f23;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
