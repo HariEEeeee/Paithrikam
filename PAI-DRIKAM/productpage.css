@@ -560,6 +560,11 @@ nav a {
   transition: 0.3s;
 }
 
+.btn.primary {
+  background: white;
+  color: black; /* 🔥 ADD THIS (or keep it if already there) */
+}
+
 .socials img:hover {
   opacity: 1;
   transform: scale(1.2);

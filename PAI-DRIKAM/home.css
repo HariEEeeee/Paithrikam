@@ -228,6 +228,49 @@ nav a:hover {
   border-radius: 5px;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE BLOCK */
+.img1, .img2, .img3 {
+  width: 100%;
+  height: 220px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+
+
+/* IMAGES */
+.img1 {
+  background-image: url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop");
+}
+
+.img2 {
+  background-image: url("https://images.unsplash.com/photo-1616627451515-cbc80e5ece35");
+}
+
+.img3 {
+  background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
+}
 
 /* TRUST */
 .trust {
@@ -320,6 +363,22 @@ nav a:hover {
 }
 
 
+/* RESET ALL ANCHORS */
+a {
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* use parent text color */
+}
+
+/* KEEP IT CONSISTENT IN ALL STATES */
+a:visited,
+a:active {
+  color: inherit;
+}
+
+/* OPTIONAL: subtle hover (recommended) */
+a:hover {
+  opacity: 0.85;
+}
 /* Mobile */
 @media (max-width: 768px) {
 
@@ -477,4 +536,22 @@ nav a:hover {
   nav.active {
     display: flex;
   }
+}
+
+a.btn.primary {
+  color: rgb(56, 56, 56);
+}
+
+.card {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0; /* 👈 push overlay behind text */
 }
