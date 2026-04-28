@@ -649,3 +649,132 @@ nav a {
   font-size: 14px;
   opacity: 0.7;
 }
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  /* GENERAL */
+  body {
+    font-size: 14px;
+  }
+
+  /* NAVBAR */
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* HERO SECTION */
+  #firstpage {
+    height: auto;
+    padding: 20px;
+  }
+
+  /* ICON SECTION */
+  #creamie {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .icon {
+    width: 40px;
+  }
+
+  /* PRODUCT BOXES */
+  #container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .whitebox {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+  }
+
+  /* MEET SECTION */
+  #meetthechad {
+    height: auto;
+    padding: 40px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #meetthechad div {
+    max-width: 100%;
+  }
+
+  #meetthechad h2 {
+    font-size: 24px;
+  }
+
+  /* BED GRID */
+  .bed-section {
+    padding: 40px 20px;
+  }
+
+  .bed-img {
+    height: 150px;
+  }
+
+  /* CUSTOM HERO */
+  .custom-content h1 {
+    font-size: 2rem;
+  }
+
+  .custom-content p {
+    font-size: 1rem;
+  }
+
+  /* INFO SECTION */
+  .custom-info {
+    padding: 40px 20px;
+  }
+
+  /* FLOATING BUTTON */
+  .search-btn {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+  }
+
+  .search-btn img {
+    width: 18px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    padding: 0 20px 30px;
+  }
+
+  .footer {
+    padding-top: 40px;
+  }
+
+  /* PRODUCT GRID */
+  .product-section {
+    padding: 40px 20px;
+  }
+
+  .product-img {
+    height: 150px;
+  }
+}
