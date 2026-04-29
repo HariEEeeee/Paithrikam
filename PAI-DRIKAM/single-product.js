@@ -54,14 +54,16 @@ const products = [
   { id: 16, name: "Deluxe Frame Bed", image: "collects/beds/bed16.jpeg", wood: "Teak", quality: "Luxury", finish: "Polished", dimensions: "7x6 ft" },
 
 
-  { id: 18, name: "Elegant Wood Bed", image: "collects/beds/bed17.jpeg", wood: "Rosewood", quality: "Premium", finish: "Natural", dimensions: "7x6 ft" },
-  { id: 19, name: "Urban Frame Bed", image: "collects/beds/bed18.jpeg", wood: "Oak", quality: "High", finish: "Glossy", dimensions: "6.5x5.5 ft" },
-  { id: 20, name: "Luxury Comfort Bed", image: "collects/beds/bed19.jpeg", wood: "Teak", quality: "Luxury", finish: "Polished", dimensions: "7x6 ft" },
+  { id: 18, name: "Elegant Wood Bed", image: "collects/beds/bed18.jpeg", wood: "Rosewood", quality: "Premium", finish: "Natural", dimensions: "7x6 ft" },
+  { id: 19, name: "Urban Frame Bed", image: "collects/beds/bed19.jpeg", wood: "Oak", quality: "High", finish: "Glossy", dimensions: "6.5x5.5 ft" },
+  { id: 20, name: "Luxury Comfort Bed", image: "collects/beds/bed20.jpeg", wood: "Teak", quality: "Luxury", finish: "Polished", dimensions: "7x6 ft" },
 
-  { id: 21, name: "Smart Sleep Bed", image: "collects/beds/bed20.jpeg", wood: "Pine", quality: "Standard", finish: "Smooth", dimensions: "6x5 ft" },
+  { id: 21, name: "Smart Sleep Bed", image: "collects/beds/bed21.jpeg", wood: "Pine", quality: "Standard", finish: "Smooth", dimensions: "6x5 ft" },
 
-  { id: 23, name: "Royal Frame Bed", image: "collects/beds/bed21.jpeg", wood: "Rosewood", quality: "Luxury", finish: "Natural", dimensions: "7x6 ft" },
-  { id: 24, name: "Modern Minimal Bed", image: "collects/beds/bed22.jpeg", wood: "Pine", quality: "Standard", finish: "Smooth", dimensions: "6x4.5 ft" },
+  { id: 23, name: "Royal Frame Bed", image: "collects/beds/bed23.jpeg", wood: "Rosewood", quality: "Luxury", finish: "Natural", dimensions: "7x6 ft" },
+  { id: 24, name: "Modern Minimal Bed", image: "collects/beds/bed24.jpeg", wood: "Pine", quality: "Standard", finish: "Smooth", dimensions: "6x4.5 ft" },
+
+
   { id: 25, name: "Premium Teak Bed", image: "collects/beds/bed23.jpeg", wood: "Teak", quality: "Premium", finish: "Polished", dimensions: "7x6 ft" },
   { id: 26, name: "Ultimate Comfort Bed", image: "collects/beds/bed24.jpeg", wood: "Oak", quality: "Luxury", finish: "Glossy", dimensions: "6.5x5.5 ft" },
 
@@ -90,11 +92,11 @@ const products = [
 
 
 
+
   { id: 46, name: "Solid Wood Dining Table", image: "collects/tables1.jpeg", wood: "Teak", quality: "Premium", finish: "Matte", dimensions: "6x3 ft", price: "₹18,999" },
   { id: 47, name: "Modern Coffee Table", image: "collects/tables2.jpeg", wood: "Oak", quality: "Standard", finish: "Glossy", dimensions: "3x2 ft", price: "₹9,499" },
   { id: 48, name: "Minimal Table", image: "collects/tables3.jpeg", wood: "Pine", quality: "Standard", finish: "Matte", dimensions: "4x2 ft", price: "₹11,000" },
   { id: 49, name: "Dining Table", image: "collects/tables4.jpeg", wood: "Teak", quality: "Premium", finish: "Natural", dimensions: "6x3 ft", price: "₹16,500" },
-
   { id: 50, name: "Luxury Marble Table", image: "collects/tables/5.jpeg", wood: "Oak", quality: "Luxury", finish: "Glossy", dimensions: "6x3 ft", price: "₹22,000" },
   { id: 51, name: "Compact Side Table", image: "collects/tables6.jpeg", wood: "Pine", quality: "Standard", finish: "Matte", dimensions: "2x2 ft", price: "₹5,500" },
   { id: 52, name: "Modern Work Desk", image: "collects/tables7.jpeg", wood: "Oak", quality: "Premium", finish: "Matte", dimensions: "5x2.5 ft", price: "₹13,000" },
@@ -114,6 +116,9 @@ const products = [
   { id: 63, name: "Ergonomic Chair", image: "collects/chairs10.jpeg", wood: "Pine", quality: "Premium", finish: "Matte", dimensions: "Standard", price: "₹7,299" },
   { id: 64, name: "Luxury Office Chair", image: "collects/chairs11.jpeg", wood: "Teak", quality: "Luxury", finish: "Soft Finish", dimensions: "Standard", price: "₹10,999" },
   { id: 65, name: "Classic Wooden Chair", image: "collects/chairs12.jpeg", wood: "Teak", quality: "Premium", finish: "Natural", dimensions: "Standard", price: "₹6,799" },
+
+
+
 
   { id: 66, name: "Featured Sofa 1", image: "collects/sofa/1.jpeg", wood: "Teak Wood", quality: "Premium", finish: "Matte", dimensions: "Standard", price: "₹18,999" },
   { id: 67, name: "Featured Sofa 2", image: "collects/sofa/2.jpeg", wood: "Teak Wood", quality: "Premium", finish: "Matte", dimensions: "Standard", price: "₹19,499" },

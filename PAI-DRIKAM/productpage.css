@@ -57,12 +57,14 @@ nav a {
     width: 55px;   /* adjust this */
     height: auto;  /* keeps aspect ratio */
 }
+
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;   /* ⭐ THIS fixes the vertical alignment */
   gap: 10px;             /* clean spacing between icon & text */
 }
+
 #creamie{
   display: flex;
   gap: 55px;
@@ -424,6 +426,7 @@ nav a {
 #table10{ background-image: url("collects/chairsandbed/10.jpeg"); }
 #table11{ background-image: url("collects/chairsandbed/table11.jpg"); }
 #table12{ background-image: url("collects/chairsandbed/table12.jpg"); }
+
 
 #chair11{ background-image: url("collects/chairsandbed/11.jpeg"); }
 #chair12{ background-image: url("collects/chairsandbed/12.jpeg"); }
