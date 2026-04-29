@@ -12,14 +12,6 @@ body {
 
 /* NAVBAR */
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 28px 58px;
-  background: #3e2f23;
-  color: white;
-  border-radius: 10px;
-}
 
 #firstpage{
         background-image: linear-gradient(
@@ -366,3 +358,83 @@ nav a:hover {
   }
 }
 
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    padding: 15px 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #3e2f23;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* HERO FIX */
+  #firstpage {
+    height: auto;              /* 🔥 FIX */
+    padding: 80px 20px 40px;
+  }
+
+  /* FEATURED GRID */
+  #container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  /* INFO BAR */
+  #creamie {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* MEET SECTION FIX 🔥 */
+  #meetthechad {
+    height: auto;              /* 🔥 FIX */
+    padding: 60px 20px;        /* 🔥 FIX */
+    justify-content: center;   /* 🔥 FIX */
+    text-align: center;
+  }
+
+  #meetthechad div {
+    max-width: 100%;
+  }
+
+  #meetthechad h2 {
+    font-size: 22px;
+  }
+
+  #meetthechad p {
+    font-size: 14px;
+  }
+
+  /* PRODUCTS */
+  .product-section {
+    padding: 30px 20px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 30px 20px;
+  }
+
+}
