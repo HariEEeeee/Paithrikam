@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAITHRIKAM</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<!-- NAVBAR + HERO WRAPPER -->
+ 
+<section class="hero">
+
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">PAITHRIKAM</div>
+
+    <nav id="nav">
+        <a href="home.html">Home</a>
+        <a href="productpage.html">Bed</a>
+        <a href="almira.html">Almira</a>
+        <a href="sofa.html">Sofa</a>
+        <a href="chairsandtables.html">Chairs and Tables</a>
+        <a href="custompage.html">Custom Orders</a>
+    </nav>
+
+    
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content">
+    <h1>Crafted for Timeless Living</h1>
+    <p>Premium wooden furniture designed to bring warmth, elegance, and heritage into your home.</p>
+
+    <div class="hero-buttons">
+      <a href="#" class="btn primary">Explore Collection</a>
+      <a href="#" class="btn secondary">View Craftsmanship</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <h2>Browse Categories</h2>
+  <div class="category-grid">
+    <a href="sofa.html">
+      <div class="card" id="sofa">Sofas</div>
+    </a>
+    <a href="productpage.html">
+      <div class="card" id="bed">Beds</div>
+    </a>
+    <a href="chairsandtables.html">
+      <div class="card" id="table">Tables</div>
+    </a>
+    <a href="chairsandtables.html">
+      <div class="card" id="chair">Chairs</div>
+    </a>
+  </div>
+</section>
+
+<section class="products">
+  <h2>Featured Designs</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <div class="img1"></div>
+      <h3>Oak Wood Chair</h3>
+      <p>₹4,999</p>
+    </div>
+
+    <div class="product">
+      <div class="img2"></div>
+      <h3>Teak Coffee Table</h3>
+      <p>₹9,999</p>
+    </div>
+
+    <div class="product">
+      <div class="img3"></div>
+      <h3>Solid Wood Bed</h3>
+      <p>₹24,999</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <h2>Why Choose Us?</h2>
+  <div class="trust-grid">
+    <div>🌳 100% Natural Wood</div>
+    <div>🛠 Handcrafted Designs</div>
+    <div>🚚 Direct from Workshop</div>
+    <div>♻ Eco-Friendly</div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Have a Custom Idea?</h2>
+  <p>We build furniture exactly the way you imagine it.</p>
+  <a href="custompage.html">
+    <button>Start Custom Order</button>
+  </a>
+</section>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-left">
+    <p>Tell Us What You Need — We’ll Craft It for You</p>
+    <div class="icons">
+      <a 
+      href="https://wa.me/919633764995?text=Hi%20I%20want%20to%20place%20a%20custom%20furniture%20order" 
+      class="whatsapp-btn"
+      target="_blank">
+        <img src="collects/WhatsApp.png">
+      </a>
+      <img src="collects/Gmail.png">
+    </div>
+  </div>
+  <p>© 2026 PureWood. All rights reserved.</p>
+</footer>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+</body>
+</html>

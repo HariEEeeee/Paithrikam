@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- IMPORTANT FOR MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Paithrikam</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1a1a1a;
+      font-family: 'Noto Serif Malayalam', serif;
+      overflow-x: hidden;
+    }
+
+    /* SPLASH */
+    .splash {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.8s ease;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: clamp(2rem, 8vw, 4rem);
+      color: #e6d3a3;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .splash.hide {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+
+    .hint {
+      position: absolute;
+      bottom: 60px;
+      font-size: 0.8rem;
+      color: #cbb892;
+      opacity: 0;
+      letter-spacing: 1px;
+      animation: fadeHint 2s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    .dot {
+      position: absolute;
+      bottom: 30px;
+      width: 6px;
+      height: 6px;
+      background: #e6d3a3;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.6); opacity: 0.3; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    @keyframes fadeHint {
+      to {
+        opacity: 0.8;
+      }
+    }
+
+    /* MAIN STORY */
+    .main {
+      display: none;
+      min-height: 100vh;
+      background: #f5f1eb;
+      color: #2e2e2e;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .main.show {
+      display: flex;
+    }
+
+    .story {
+      max-width: 650px;
+      width: 100%;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(25px);
+      font-size: clamp(1rem, 4.5vw, 1.8rem);
+      margin: 12px 0;
+      transition: all 0.8s ease;
+    }
+
+    .line.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .final {
+      margin-top: 30px;
+      font-size: clamp(1.5rem, 6vw, 2.4rem);
+      color: #a67c52;
+      letter-spacing: 1px;
+    }
+
+    .line:nth-child(4) {
+      margin-top: 25px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- SPLASH -->
+  <div class="splash" onclick="enterSite()">
+    <div class="title">പൈതൃകം</div>
+    <div class="hint">Tap to enter</div>
+    <div class="dot"></div>
+  </div>
+
+  <!-- STORY -->
+  <div class="main" id="mainContent">
+    <div class="story">
+      <p class="line">Every piece holds a story.</p>
+      <p class="line">Every curve is shaped with care.</p>
+      <p class="line">Every detail is made to last.</p>
+
+      <p class="line">Crafted to live with you,</p>
+      <p class="line">through moments, memories, and time.</p>
+
+      <p class="line final">Paithrikam.</p>
+    </div>
+  </div>
+
+  <script>
+    function enterSite() {
+      const splash = document.querySelector('.splash');
+      const main = document.getElementById('mainContent');
+
+      splash.classList.add('hide');
+
+      setTimeout(() => {
+        splash.style.display = 'none';
+        main.classList.add('show');
+        startStory();
+      }, 800);
+    }
+
+    function startStory() {
+      const lines = document.querySelectorAll('.line');
+
+      lines.forEach((line, index) => {
+        setTimeout(() => {
+          line.classList.add('show');
+        }, index * 1800); // faster for mobile
+      });
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, lines.length * 1800 + 2000);
+    }
+  </script>
+
+</body>
+</html>

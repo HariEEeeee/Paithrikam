@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: #ffffff;
+  color: #2e2e2e;
+}
+
+/* NAVBAR */
+
+
+#firstpage{
+        background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.913) 0%,
+      rgba(0, 0, 0, 0.345) 18%,
+      rgba(0, 0, 0, 0.174) 25%,
+      rgba(0, 0, 0, 0.08) 40%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    url("collects/front.jpg");
+  height: 100vh; /* full screen */
+  background-size: cover;
+  background-position: center;
+}
+
+#firstpage {
+  height: 100vh;
+  padding-top: 20px; /* 👈 THIS creates top space */
+  padding-left: 20px;
+  padding-right: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  background: #3e2f23;
+  color: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* TOP INFO BAR */
+#creamie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background: #f5f1eb;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 20px;
+}
+
+#meetthechad {
+    height: 100vh;
+    background: 
+        linear-gradient(to left, rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+        url("collects/picke2.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    padding: 0 80px;
+    color: white;
+}
+
+
+/* SECTION HEAD */
+
+#head {
+  text-align: center;
+  margin: 50px 0 20px;
+  font-size: 28px;
+}
+
+/* FEATURED CARDS */
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 40px 40px;
+}
+
+.card {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+
+.whitebox {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s;
+}
+
+.card:hover .whitebox {
+  transform: scale(1.05);
+}
+
+/* SAMPLE IMAGES (CHANGE IF NEEDED) */
+
+#table1 { background-image: url("collects/table.jpeg"); }
+#table2 { background-image: url("collects/table.jpeg"); }
+#table3 { background-image: url("collects/table.jpeg"); }
+#table4 { background-image: url("collects/table.jpeg"); }
+
+/* MEET SECTION */
+
+
+#meetthechad h2 {
+  font-size: 26px;
+}
+
+#meetthechad p {
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+#meetthechad button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #3e2f23;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* PRODUCTS */
+
+.product-section {
+  padding: 50px 40px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  color: #777;
+}
+
+
+/*TABLES AND CHAIRS*/
+#table1{ background-image: url("collects/chairsandbed/1.jpeg"); }
+#table2{ background-image: url("collects/chairsandbed/2.jpeg"); }
+#table3{ background-image: url("collects/chairsandbed/3.jpeg"); }
+#table4{ background-image: url("collects/chairsandbed/4.jpeg"); }
+#table5{ background-image: url("collects/chairsandbed/5.jpg"); }
+#table6{ background-image: url("collects/chairsandbed/6.jpeg"); }
+#table7{ background-image: url("collects/chairsandbed/7.jpeg"); }
+#table8{ background-image: url("collects/chairsandbed/8.jpeg"); }
+#table9{ background-image: url("collects/chairsandbed/9.jpeg"); }
+#table10{ background-image: url("collects/chairsandbed/10.jpeg"); }
+#table11{ background-image: url("collects/chairsandbed/table11.jpg"); }
+#table12{ background-image: url("collects/chairsandbed/table12.jpg"); }
+
+
+#chair11{ background-image: url("collects/chairsandbed/11.jpeg"); }
+#chair12{ background-image: url("collects/chairsandbed/12.jpeg"); }
+#chair13{ background-image: url("collects/chairsandbed/13.jpeg"); }
+#chair14{ background-image: url("collects/chairsandbed/14.jpeg"); }
+#chair15{ background-image: url("collects/chairsandbed/15.jpg"); }
+#chair16{ background-image: url("collects/chairsandbed/16.jpeg"); }
+#chair17{ background-image: url("collects/chairsandbed/17.jpg"); }
+#chair18{ background-image: url("collects/chairsandbed/18.jpg"); }
+#chair19{ background-image: url("collects/chairsandbed/19.jpg"); }
+#chair120{ background-image: url("collects/chairsandbed/20.jpg"); }
+
+
+/* SEARCH BUTTON */
+.search-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3e2f23;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.search-btn img {
+  width: 20px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #3e2f23;
+  color: white;
+  padding: 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-links a {
+  display: block;
+  margin: 6px 0;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.socials img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #3e2f23;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  #container,
+  .product-section {
+    padding: 20px;
+  }
+
+  #creamie {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    padding: 15px 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #3e2f23;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* HERO FIX */
+  #firstpage {
+    height: auto;              /* 🔥 FIX */
+    padding: 80px 20px 40px;
+  }
+
+  /* FEATURED GRID */
+  #container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  /* INFO BAR */
+  #creamie {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* MEET SECTION FIX 🔥 */
+  #meetthechad {
+    height: auto;              /* 🔥 FIX */
+    padding: 60px 20px;        /* 🔥 FIX */
+    justify-content: center;   /* 🔥 FIX */
+    text-align: center;
+  }
+
+  #meetthechad div {
+    max-width: 100%;
+  }
+
+  #meetthechad h2 {
+    font-size: 22px;
+  }
+
+  #meetthechad p {
+    font-size: 14px;
+  }
+
+  /* PRODUCTS */
+  .product-section {
+    padding: 30px 20px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 30px 20px;
+  }
+
+}
