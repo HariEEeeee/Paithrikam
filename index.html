@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paithrikam | Heritage Discovery</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<style>
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fbf9f5;
+  color: #1b1c1a;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Custom Classes for fonts */
+.display-lg-mobile {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.headline-sm {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+.display-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.headline-md {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+}
+.label-caps {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.body-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.body-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Utility classes */
+.w-full {
+  width: 100%;
+}
+.h-10 {
+  height: 40px;
+}
+.h-12 {
+  height: 48px;
+}
+.w-12 {
+  width: 48px;
+}
+.h-16 {
+  height: 64px;
+}
+.max-w-screen-2xl {
+  max-width: 1536px;
+  margin: 0 auto;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.left-0 {
+  left: 0;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.mt-8 {
+  margin-top: 32px;
+}
+.mb-8 {
+  margin-bottom: 32px;
+}
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.py-4 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.rounded-lg {
+  border-radius: 1rem;
+}
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, rgba(48,31,14,0.8), transparent);
+}
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, rgba(48,31,14,0.6), transparent, transparent);
+}
+.hover\:opacity-70:hover {
+  opacity: 0.7;
+}
+.transition-opacity {
+  transition: opacity 0.2s;
+}
+.transition-transform {
+  transition: transform 0.2s;
+}
+.active\:scale-95:active {
+  transform: scale(0.95);
+}
+.hover\:scale-110:hover {
+  transform: scale(1.10);
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.object-contain {
+  object-fit: contain;
+}
+.object-cover {
+  object-fit: cover;
+}
+.w-10 {
+  width: 40px;
+}
+.h-10 {
+  height: 40px;
+}
+.bg-white\/20 {
+  background-color: rgba(255,255,255,0.2);
+}
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+.text-primary {
+  color: #301f0e;
+}
+.text-outline {
+  color: #80756c;
+}
+.text-on-surface-variant {
+  color: #4e453e;
+}
+.text-white {
+  color: #ffffff;
+}
+.bg-primary {
+  background-color: #301f0e;
+}
+.bg-primary-fixed {
+  background-color: #fdddc1;
+}
+.bg-surface-container {
+  background-color: #efeeea;
+}
+.bg-surface-container-high {
+  background-color: #eae8e4;
+}
+.bg-surface-container-low {
+  background-color: #f5f3ef;
+}
+.bg-surface {
+  background-color: #fbf9f5;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-bold {
+  font-weight: 700;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition-all {
+  transition: all 0.2s;
+}
+.shadow-primary {
+  box-shadow: 0 8px 32px rgba(72,52,33,0.08);
+}
+.border {
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.border-white\/20 {
+  border-color: rgba(255,255,255,0.2);
+}
+.w-12 {
+  width: 48px;
+}
+.h-12 {
+  height: 48px;
+}
+/* Specific sizes for icons */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  line-height: 1;
+}
+
+/* Scrollbar hidden */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Other custom styles */
+.glass-blur {
+  backdrop-filter: blur(16px);
+}
+</style>
+</head>
+<body>
+<!-- Top AppBar -->
+<header style="position: fixed; top: 0; width: 100%; z-index: 50; background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent); display: flex; justify-content: space-between; align-items: center; padding: 16px;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <span class="material-symbols-outlined" style="color:#301f0e; cursor:pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">menu</span>
+    <img src="https://lh3.googleusercontent.com/aida/ADBb0uggPP2IkmCyVyYvwPXSdI_vMNMBpa85X2_FoY9o-SkaCc3GyrMLpeNu_5wCbjkg7l-5pCv_rNed24P-P5d-FYv4Bw3t8iL10oKgd4SEQuT-HCdNmP0cgUoOefRDZ2e_mQjN4En7LmzrHD8i78vWUsfSKH6KB0oJP8qZBKFcQdABA7EnTtzv1wKlVeEhs4VJXg_BK3LwbnEfdWBpNe-judjphXmPAIU0lOGNaDTbIuDxPmyhpJFHJlKeLGA" alt="Paithrikam Logo" style="height:40px; width:40px; object-fit:contain;">
+    <h1 style="font-family:'Playfair Display', serif; font-size:36px; line-height:44px; letter-spacing:-0.01em; font-weight:700; color:#301f0e;">Paithrikam</h1>
+  </div>
+  <div style="display:flex; align-items: center; gap:16px;">
+    <span class="material-symbols-outlined" style="color:#301f0e; cursor:pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">shopping_bag</span>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main style="padding-top: 96px; padding-bottom: 128px; padding-left:16px; padding-right:16px; max-width: 1536px; margin:0 auto;">
+  
+  <!-- Search Bar -->
+  <div style="margin-top:16px; margin-bottom:32px; position: relative;">
+    <div style="position: absolute; top: 50%; left: 16px; transform: translateY(-50%);">
+      <span class="material-symbols-outlined" style="color:#80756c;">search</span>
+    </div>
+    <input type="text" placeholder="Search heritage pieces..." style="width:100%; padding:16px 16px 16px 48px; border: none; border-bottom: 1px solid #d2c4ba; outline: none; border-radius:0 0 0 0; font-family:'Inter', sans-serif; font-size:16px; line-height:24px; color:#4e453e; background:#f5f3ef; transition: background 0.2s;"/>
+  </div>
+  
+  <!-- Filter Chips -->
+  <div style="display:flex; overflow-x:auto; gap:12px; padding-bottom:24px; margin-left:-16px; margin-right:-16px;">
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#fdddc1; color:#301f0e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">LIVING ROOM</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">BEDROOM</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">KITCHEN</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">DINING</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">STUDY</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">BASEMENT</button>
+    <button style="flex-shrink:0; padding:8px 24px; border-radius:9999px; background:#efeeea; color:#4e453e; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; border:none; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">STORE ROOM</button>
+  </div>
+  
+  <!-- Hero Section -->
+  <section style="margin-top:32px; margin-bottom:80px; display:grid; grid-template-columns:1fr; gap:16px;">
+    <div style="position:relative; height:60vh; border-radius:8px; overflow:hidden;">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq5nMu8fwKEcO_y-KcSaCKyfSj77KjBA20j9XhiXbxy5H7ybGuGWyLITw47vNYo6xFA0SHWbdWnp8mZaGDRa2t9REbukz2A51z0NYmMxRgsFTKkbmjYdXQO26zR9n08tSKzuGhnCf_up_jLm_FdTTSx1JNJ0skfwyQJhB_OpvhrUjPgWWK-2JiWr91LLbbwKJ_cdoe5qLNyB7ZKi98BqDtpdhe7IoScBmr4OQVzr7FfhM8tiBl55-8nHDyibXpfzf5KKJwY-vexdFP" alt="Hero" style="width:100%; height:100%; object-fit:cover; transition:transform 1s;"/>
+      <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(48,31,14,0.6), transparent); display:flex; flex-direction:column; justify-content:flex-end; padding:16px;">
+        <span style="font-family:'Inter', sans-serif; font-size:12px; color:#301f0e;">SEASONAL SPOTLIGHT</span>
+        <h2 style="font-family:'Playfair Display', serif; font-size:36px; line-height:44px; color:#fff;">The Charu Chair</h2>
+        <p style="font-family:'Inter', sans-serif; font-size:16px; color:rgba(255,255,255,0.9); max-width:600px;">A reinterpretation of the traditional Kerala lounger, crafted from 50-year-old teak with hand-woven cane details.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Product Grid -->
+  <section style="display:grid; grid-template-columns:1fr; gap:48px;">
+    <!-- Item 1 -->
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="position:relative; aspect-ratio:4 / 5; overflow:hidden; border-radius:8px; background:#eae8e4;">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDcnuzO4GRs7zOAzsvWxRaBVBl5_aTjmbymom1r-NDK62zB1Lv8a9dRrQFVRTJQSxrRDoY4w-3Pw7BZ6AFNsLf_DE18Rn_euN6PpYVZ6CKN-7sePzQTE4AwbyBruh7QYXLgO7SE3i6KmlM5o6pwuDp1c4hOj0oJqnMiGgslDoQbjgstpPZ_zRiiSK6ZK6D0lYNFmTIYvINPzoERpqEy6gZ1DS-VCBN_kmLNdeuxnKHtZqp_mqtccs2vNlQQ4dlU8D3_E5uf0Acgjg" alt="Product 1" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;"/>
+        <button style="position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; transition:background 0.2s;">
+          <span class="material-symbols-outlined" style="font-size:20px; color:#fff;">favorite</span>
+        </button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <span style="font-family:'Inter', sans-serif; font-size:12px; color:#4e453e; text-transform:uppercase;">ROSEWOOD</span>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:600; color:#301f0e;">Nalukettu Bed</h3>
+          <p style="font-family:'Inter', sans-serif; font-size:16px; font-weight:600;">₹1,24,000</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Item 2 -->
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="position:relative; aspect-ratio:4 / 5; overflow:hidden; border-radius:8px; background:#eae8e4;">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhfgJc04uF7SAg16Be25nqbVNHhEPe9NmJXcuNX7hzMJkvSpVVVZeAO7RJcKgDxtYVJbrCpiwgDQEVrRuQ2FJwieFcTMxzwdtbxhxAjTJGCQDg0uOaWzAk3qWUIOYYJp5A4aC1bTs7zt2O-yC9iZjlcBd4W0jIpQbJcMEl_fLzcMigQAt3ygTF93_TwTLaE7869hwcnutCyoVypLkm78TqpXpg_pjlXDs00ZeARRvhT_FNWLV8fsg4iZCwfbocqg3vYy2Fe7u2aexm" alt="Product 2" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;"/>
+        <button style="position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; transition:background 0.2s;">
+          <span class="material-symbols-outlined" style="font-size:20px; color:#fff;">favorite</span>
+        </button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <span style="font-family:'Inter', sans-serif; font-size:12px; color:#4e453e; text-transform:uppercase;">WILD TEAK</span>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:600; color:#301f0e;">Vembanad Sideboard</h3>
+          <p style="font-family:'Inter', sans-serif; font-size:16px; font-weight:600;">₹86,500</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Item 3 -->
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="position:relative; aspect-ratio:4 / 5; overflow:hidden; border-radius:8px; background:#eae8e4;">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3izQGdjrdTvpaUzlRE8XRsl-_PKqo-DCjvXwFKseUoKc39r3C31tWq9r7-CbObJV-0fV8Cl8gxfMVan0ST2ehN8mCPxpqaIrH8z-RG1CLCrI0sKU8XBaZHvcRY7FagMlJ7eeQtdvC393B1fk22O_VLOHQ1rxdBCUnAjF4Uh0ahCZKEdpAonJ1NrGAz6NiAr-TuyOFvc7ZiYsP3PZTIX9NrvytmOfVZixwWp08oqEzj9XQ70-oGhXhM8zxfK11KpHZ9VaUz0eC3_pm" alt="Product 3" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;"/>
+        <button style="position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; transition:background 0.2s;">
+          <span class="material-symbols-outlined" style="font-size:20px; color:#fff;">favorite</span>
+        </button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <span style="font-family:'Inter', sans-serif; font-size:12px; color:#4e453e; text-transform:uppercase;">WALNUT</span>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:600; color:#301f0e;">Oottupura Table</h3>
+          <p style="font-family:'Inter', sans-serif; font-size:16px; font-weight:600;">₹1,42,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+</main>
+
+<!-- Bottom Navigation -->
+<nav style="position: fixed; bottom:24px; left:50%; transform:translateX(-50%); display:flex; justify-content:space-around; align-items:center; padding:12px; width:90%; max-width:400px; background:rgba(251,249,245,0.6); border-radius:50px; border:1px solid rgba(255,255,255,0.2); box-shadow:0 8px 32px rgba(72,52,33,0.08); z-index:50;">
+  <a href="#" style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; color:#4e453e; font-size:24px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <span class="material-symbols-outlined">home</span>
+  </a>
+  <a href="#" style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; background:#301f0e; color:#fff; border-radius:50%; font-size:24px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <span class="material-symbols-outlined">grid_view</span>
+  </a>
+  <a href="#" style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; color:#4e453e; font-size:24px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <span class="material-symbols-outlined">favorite</span>
+  </a>
+  <a href="#" style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; color:#4e453e; font-size:24px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <span class="material-symbols-outlined">auto_awesome</span>
+  </a>
+  <a href="#" style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; color:#4e453e; font-size:24px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <span class="material-symbols-outlined">person</span>
+  </a>
+</nav>
+
+</body>
+</html>

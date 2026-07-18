@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paithrikam - Sovereign Heritage</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1c1a",
+                        "outline": "#80756c",
+                        "on-tertiary-container": "#a9a09c",
+                        "primary-fixed": "#fdddc1",
+                        "on-secondary": "#ffffff",
+                        "primary": "#301f0e",
+                        "tertiary-fixed-dim": "#cfc4c0",
+                        "on-tertiary-fixed": "#201a18",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#efeeea",
+                        "inverse-surface": "#30312e",
+                        "on-tertiary-fixed-variant": "#4c4542",
+                        "surface": "#fbf9f5",
+                        "surface-bright": "#fbf9f5",
+                        "on-primary-fixed": "#281807",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "primary-fixed-dim": "#e0c1a7",
+                        "surface-tint": "#725a44",
+                        "secondary-container": "#fed3c7",
+                        "tertiary": "#27221f",
+                        "background": "#fbf9f5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#795950",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "inverse-on-surface": "#f2f0ed",
+                        "secondary": "#77574d",
+                        "tertiary-fixed": "#ece0dc",
+                        "on-background": "#1b1c1a",
+                        "primary-container": "#483421",
+                        "surface-container-highest": "#e4e2de",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-secondary-fixed": "#2c160e",
+                        "inverse-primary": "#e0c1a7",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#3d3734",
+                        "surface-variant": "#e4e2de",
+                        "on-surface-variant": "#4e453e",
+                        "on-primary-container": "#b99c83",
+                        "outline-variant": "#d2c4ba",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-low": "#f5f3ef",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#58432f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "24px",
+                        "gutter": "16px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        .wood-overlay {
+            background-image: linear-gradient(rgba(48, 31, 14, 0.4), rgba(48, 31, 14, 0.4));
+            mix-blend-mode: multiply;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.02); }
+        }
+
+        .animate-splash {
+            animation: fadeIn {
+                0% { opacity: 0; transform: scale(1.05); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+        }
+
+        @keyframes subtle-drift {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .drift-bg {
+            animation: subtle-drift 15s infinite alternate ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-hidden">
+<!-- Cinematic Splash Screen Canvas -->
+<main class="relative h-screen w-screen flex items-center justify-center overflow-hidden">
+<!-- Immersive Wood Background -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 drift-bg bg-cover bg-center bg-no-repeat" data-alt="A cinematic, extreme close-up of premium Kerala Teak wood grain, showcasing intricate textures and warm organic patterns. The lighting is soft and moody, coming from a low angle to highlight the physical depth of the timber's surface. Rich mahogany and deep amber tones dominate the palette, creating an atmosphere of quiet luxury and centuries-old craftsmanship. Subtle shadows pool in the crevices of the wood, emphasizing its tactile and authentic heritage feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPvzAR1jzxtxk4xqmnsHVxA3_AZ8yYfR7YhGd7CzN5BFsnOSOY5XIn5G8IX0E8bwwDpoh-QS0cRmmdv2WEj2lIPi8KJn7z6Ds0kyTh5bxGrLXqOkp4XfDnMkiITd36WTpVNf5sFn0yicPQ9j-pf0naHBvpJIGV7isp8mOatiMlMP7Q16gEm7e_PWGQyyVkikEsdWHleCKqqHqslC03z5ZvjD0_gk4_HqS97Vd8uYzq0er8WG1iI8fs03007yoLzDx1W_1oI7RIJCNt')">
+</div>
+<!-- Vignette & Tint Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30"></div>
+<div class="absolute inset-0 bg-primary/20 backdrop-brightness-75"></div>
+</div>
+<!-- Content Shell (Centered Identity) -->
+<div class="relative z-10 flex flex-col items-center justify-center text-center animate-splash">
+
+    <!-- Brand Logo -->
+<div class="mb-12 transition-all duration-1000 transform scale-90 md:scale-100">
+<img alt="Paithrikam Logo" class="w-48 h-48 md:w-64 md:h-64 object-contain filter drop-shadow-2xl brightness-110" src="pai-mob/image.png"/>
+</div>
+
+<!-- Typography Cluster -->
+<div class="space-y-4">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary-fixed tracking-tight opacity-90">
+                    Paithrikam
+                </h1>
+<div class="flex items-center justify-center gap-4">
+<span class="h-[1px] w-8 bg-primary-fixed/30"></span>
+<p class="font-label-caps text-label-caps text-primary-fixed tracking-[0.3em] uppercase italic opacity-70">
+                        Heritage in every grain
+                    </p>
+<span class="h-[1px] w-8 bg-primary-fixed/30"></span>
+</div>
+</div>
+<!-- Subtle Interactive CTA -->
+<div class="mt-20">
+<button class="group relative flex flex-col items-center gap-4 text-primary-fixed/60 hover:text-primary-fixed transition-all duration-500" onclick="window.location.reload()">
+<span class="font-label-caps text-[10px] tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">EXPLORE COLLECTION</span>
+<div class="w-12 h-12 rounded-full border border-primary-fixed/20 flex items-center justify-center group-hover:border-primary-fixed/60 transition-colors">
+<span class="material-symbols-outlined transition-transform duration-500 group-hover:translate-y-1">keyboard_arrow_down</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Atmospheric Dust/Grain Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-20 wood-overlay bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+<!-- Bottom Branding Bar (Abstracted) -->
+<div class="absolute bottom-10 w-full flex justify-between px-margin-mobile md:px-margin-desktop z-20">
+<span class="font-label-caps text-[10px] text-primary-fixed/40 tracking-tighter">SINCE 1924</span>
+<span class="font-label-caps text-[10px] text-primary-fixed/40 tracking-tighter">KERALA, INDIA</span>
+</div>
+</main>
+<!-- Hidden Navigation Shell (Per Requirement - Contextually Suppressed for Splash) -->
+<!-- The TopAppBar and BottomNavBar are omitted here as per the "Linear/Transactional/Splash" exclusion rule. -->
+<script>
+        // Simple entrance transition for text elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-splash > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 1.2s cubic-bezier(0.2, 0, 0.2, 1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 400 + (index * 200));
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paithrikam - Sovereign Heritage</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1c1a",
+                      "outline": "#80756c",
+                      "on-tertiary-container": "#a9a09c",
+                      "primary-fixed": "#fdddc1",
+                      "on-secondary": "#ffffff",
+                      "primary": "#301f0e",
+                      "tertiary-fixed-dim": "#cfc4c0",
+                      "on-tertiary-fixed": "#201a18",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#efeeea",
+                      "inverse-surface": "#30312e",
+                      "on-tertiary-fixed-variant": "#4c4542",
+                      "surface": "#fbf9f5",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#ffdbd0",
+                      "surface-bright": "#fbf9f5",
+                      "on-primary-fixed": "#281807",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "surface-container-high": "#eae8e4",
+                      "primary-fixed-dim": "#e0c1a7",
+                      "surface-tint": "#725a44",
+                      "secondary-container": "#fed3c7",
+                      "tertiary": "#27221f",
+                      "background": "#fbf9f5",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#795950",
+                      "on-secondary-fixed-variant": "#5d4037",
+                      "inverse-on-surface": "#f2f0ed",
+                      "secondary": "#77574d",
+                      "tertiary-fixed": "#ece0dc",
+                      "on-background": "#1b1c1a",
+                      "primary-container": "#483421",
+                      "surface-container-highest": "#e4e2de",
+                      "secondary-fixed-dim": "#e7bdb1",
+                      "on-secondary-fixed": "#2c160e",
+                      "inverse-primary": "#e0c1a7",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#3d3734",
+                      "surface-variant": "#e4e2de",
+                      "on-surface-variant": "#4e453e",
+                      "on-primary-container": "#b99c83",
+                      "outline-variant": "#d2c4ba",
+                      "surface-dim": "#dbdad6",
+                      "surface-container-low": "#f5f3ef",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#58432f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-mobile": "24px",
+                      "gutter": "16px",
+                      "section-gap": "80px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-sm": ["Playfair Display"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-item {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        .glass-overlay {
+            background: linear-gradient(to top, rgba(27, 28, 26, 0.9) 0%, rgba(27, 28, 26, 0.4) 40%, transparent 100%);
+        }
+        .dot-active {
+            width: 24px;
+            background-color: #fdddc1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- Top AppBar (Simplified for Onboarding) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-8 bg-transparent">
+<div class="font-display-lg-mobile text-display-lg-mobile text-white tracking-tight">Paithrikam</div>
+<button class="text-white/80 font-label-caps tracking-widest hover:text-white transition-colors">SKIP</button>
+</header>
+<!-- Main Carousel -->
+<main class="carousel-container flex h-screen w-full overflow-x-auto transition-transform duration-700 ease-in-out" id="carousel">
+<!-- Slide 1 -->
+<section class="carousel-item relative h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-angle shot of a handcrafted solid teak wood dining table in a minimalist, sun-drenched Kerala villa. The table features intricate traditional joinery and a rich, honey-toned grain. Soft, natural morning light spills across the surface, highlighting its tactile texture. The setting is serene and sophisticated, with a muted palette of warm creams and deep browns, embodying the Sovereign Heritage aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfOLtbc-xxs8deS5b0T5Vkq1KDbucFXil-m8L8JxuaZydovAD8WUjTOiEY2xmTYiN8G2S_iSq5fE8zMJHgRy-9jwEnhVu83ypq0HY6eT35XrTGSXDSxtIxb4yRFTV1Uy6_xaHxVLbxIx4n6R06EplOZUVw61EdlsA2AiORjgcC6V17lOb62Tmxta1K9X341p1sO1kST_cQiqc43YFcOCGlHmAf9wJvVU2wU5SXFUy9bxV6wVAj2r-mIgcM7s9_7Vxu1-hh8-WGyb9x')">
+</div>
+<div class="glass-overlay absolute inset-0 flex flex-col justify-end px-margin-mobile pb-40">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4 max-w-[280px]">Crafted for Generations</h1>
+<p class="text-white/70 font-body-md leading-relaxed max-w-[300px]">Furniture that breathes the soul of Kerala’s legendary woodcraft into your contemporary living space.</p>
+</div>
+</section>
+<!-- Slide 2 -->
+<section class="carousel-item relative h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="An editorial close-up of an elderly Kerala artisan's weathered hands meticulously carving a delicate floral motif into a dark walnut wood block. The lighting is dramatic and cinematic, emphasizing the fine wood shavings and the focus of the craft. The color palette is earthy and rich, dominated by charcoal, deep teak, and warm wood tones. The mood is quiet, authoritative, and deeply respectful of the ancestral tradition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPTAduhOmWNzpirNZO57MG64-Gz6Ik4WPPIG_Q3wv-Q1TNBpVkI1ycZ9DH0UIB6-uGSMSgtr_BbK0csriloFbOfQfIxnxzkwmQFrqTUrj5hBPtaqh1qfAqjh8w9Xjj4LV1DR1N_KUlFm0fzMgx--Quj5lZKdveyw3pWYqomhbBajR3k3PCorQrcYYBmbbzedhMtbB4ow8tcyNKK19wpuN4pZoSZ8VhtCwz8kZaRnbjcGn6PzHV11a99bIWSkn9btCrv5EsA6S5ZYnI')">
+</div>
+<div class="glass-overlay absolute inset-0 flex flex-col justify-end px-margin-mobile pb-40">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4 max-w-[280px]">Authentic Kerala Craftsmanship</h1>
+<p class="text-white/70 font-body-md leading-relaxed max-w-[300px]">Each piece is a testament to thousands of years of ancestral wisdom, hand-carved by master artisans.</p>
+</div>
+</section>
+<!-- Slide 3 -->
+<section class="carousel-item relative h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide, editorial shot of an elegant living room featuring a signature Paithrikam wooden lounge chair and a minimalist side table. The room has high ceilings and large glass windows looking out onto lush greenery. The interior design is modern-minimalist with a tactile edge, utilizing heavy white space and cinematic lighting. The color palette features sandal beige, warm cream, and rich teak brown, creating a timeless, luxurious atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbWdcq2em_JzeupbwFkcbLJvp0F-r_T3o1TjmCx7iN14QObhcu27VdmilaJ3faQvLRMrD7xmtp1Apge6AYccLs3u_7uVmO_UrgC-fsLJNFmTOrjVt_mK_bcu1XudMp-hTIna37p4mUFThTUCO9qTqhPQQhhRTljd5UFIyjqWkDeafO_1nNdMEYflxhTjJXqE62s70jO6aZcDyCyUXVnrfqZZioXi0NJXAZoOBb9owk6EUcOrZamOVH2NmyNzebM1DPje4cCqzp1-qJ')">
+</div>
+<div class="glass-overlay absolute inset-0 flex flex-col justify-end px-margin-mobile pb-40">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4 max-w-[280px]">Timeless Luxury for Your Home</h1>
+<p class="text-white/70 font-body-md leading-relaxed max-w-[300px]">Transform your habitat into a sanctuary of refined taste and sustainable, enduring beauty.</p>
+</div>
+</section>
+</main>
+<!-- UI Overlay Controls -->
+<div class="fixed bottom-0 w-full z-50 px-margin-mobile pb-12 pointer-events-none">
+<div class="flex flex-col gap-8 pointer-events-auto">
+<!-- Pagination Dots -->
+<div class="flex gap-2 justify-center items-center">
+<div class="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-300 dot-active" id="dot-0"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-300" id="dot-1"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-300" id="dot-2"></div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary-fixed text-primary font-body-lg h-16 rounded-full flex items-center justify-center gap-base active:scale-95 transition-all shadow-xl" id="cta-button">
+<span>Begin Your Journey</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 500">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        const carousel = document.getElementById('carousel');
+        const dots = [
+            document.getElementById('dot-0'),
+            document.getElementById('dot-1'),
+            document.getElementById('dot-2')
+        ];
+        const ctaButton = document.getElementById('cta-button');
+
+        carousel.addEventListener('scroll', () => {
+            const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+            
+            dots.forEach((dot, i) => {
+                if(i === index) {
+                    dot.classList.add('dot-active');
+                    dot.classList.remove('w-1.5');
+                    dot.classList.add('w-6');
+                } else {
+                    dot.classList.remove('dot-active');
+                    dot.classList.add('w-1.5');
+                    dot.classList.remove('w-6');
+                }
+            });
+
+            // Update button text on last slide
+            if (index === 2) {
+                ctaButton.innerHTML = `<span>Enter the Showroom</span><span class="material-symbols-outlined" style="font-variation-settings: 'wght' 500">door_open</span>`;
+                ctaButton.classList.add('bg-white');
+                ctaButton.classList.remove('bg-primary-fixed');
+            } else {
+                ctaButton.innerHTML = `<span>Begin Your Journey</span><span class="material-symbols-outlined" style="font-variation-settings: 'wght' 500">arrow_forward</span>`;
+                ctaButton.classList.remove('bg-white');
+                ctaButton.classList.add('bg-primary-fixed');
+            }
+        });
+
+        // Click to scroll to next or finish
+        ctaButton.addEventListener('click', () => {
+            const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+            if (index < 2) {
+                carousel.scrollTo({
+                    left: (index + 1) * carousel.offsetWidth,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Success feedback and transition simulation
+                ctaButton.innerHTML = '<div class="h-5 w-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>';
+                setTimeout(() => {
+                    alert('Welcome to the heritage collection.');
+                    location.reload();
+                }, 1000);
+            }
+        });
+    </script>
+</body></html>

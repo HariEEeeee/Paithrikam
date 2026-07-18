@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paithrikam | Collections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-brown: #2E1A0C;
+            --accent-gold: #C5A880;
+            --bg-light: #F4EFEA;
+            --bg-card: #FAF8F5;
+            --text-dark: #332921;
+            --text-muted: #7A6E65;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(244, 239, 234, 0.95), rgba(244, 239, 234, 0.8));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(46, 26, 12, 0.05);
+        }
+
+        .nav-icon {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-icon:hover {
+            color: var(--accent-gold);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--primary-brown);
+            text-decoration: none;
+        }
+
+        /* --- HERO BANNER SECTION --- */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(46, 26, 12, 0.45), rgba(46, 26, 12, 0.45)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+
+        /* --- CATEGORY FILTER FILTER BAR --- */
+        .category-container {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 5%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .category-btn {
+            background-color: transparent;
+            border: 1px solid rgba(46, 26, 12, 0.15);
+            color: var(--primary-brown);
+            padding: 10px 24px;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-brown);
+            color: #fff;
+            border-color: var(--primary-brown);
+            box-shadow: 0 4px 15px rgba(46, 26, 12, 0.15);
+        }
+
+        /* --- PRODUCT GRID --- */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 5%;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px 30px;
+            transition: var(--transition);
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .product-card.hide {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(46, 26, 12, 0.08);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 110%; /* Elegant portrait aspect ratio */
+            overflow: hidden;
+            background-color: #eaddd3;
+        }
+
+        .product-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.06);
+        }
+
+        .product-info {
+            padding: 25px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-brown);
+            margin-top: auto;
+        }
+
+        /* --- FLOATING BOTTOM MENU (From Inspiration Design) --- */
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(210, 200, 190, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 12px 30px;
+            border-radius: 40px;
+            display: flex;
+            gap: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .floating-icon {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0.7;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .floating-icon:hover, .floating-icon.active {
+            opacity: 1;
+            background-color: var(--primary-brown);
+            color: #fff;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.3rem; }
+            .category-container { gap: 10px; }
+            .category-btn { padding: 8px 18px; font-size: 0.75rem; }
+            .floating-nav { gap: 15px; padding: 10px 20px; width: 90%; justify-content: space-around; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <i class="fa-solid fa-bars nav-icon"></i>
+        <a href="#" class="logo">Paithrikam</a>
+        <i class="fa-solid fa-bag-shopping nav-icon"></i>
+    </header>
+
+    <section class="hero">
+        <span class="hero-subtitle">Sovereign Heritage</span>
+        <h1 class="hero-title">The Masterpiece Collections</h1>
+    </section>
+
+    <div class="category-container">
+        <button class="category-btn active" data-filter="all">All Masterpieces</button>
+        <button class="category-btn" data-filter="beds">Beds</button>
+        <button class="category-btn" data-filter="chairs">Chairs</button>
+        <button class="category-btn" data-filter="tables">Tables</button>
+        <button class="category-btn" data-filter="cabinets">Cabinets & Almarahs</button>
+    </div>
+
+    <main class="products-section"> 
+        <div class="products-grid" id="productGrid">
+    
+            <div class="product-card" data-category="beds" data-id="1">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/736x/56/b0/b1/56b0b10034903f070e9fe46de1a1e6e0.jpg" alt="Royal Teak Bed">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Beds</span>
+                    <h3 class="product-title">Malabar Royal Teak Bed</h3>
+                    <span class="product-price">₹1,49,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="chairs" data-id="2">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/0d/e0/29/0de029ca9ec62a94470fa53d67a0744d.jpg" alt="Classic Lounge Chair">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Chairs</span>
+                    <h3 class="product-title">Heritage Easy Chair</h3>
+                    <span class="product-price">₹24,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-id="3">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=600&q=80" alt="Dining Table">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tables</span>
+                    <h3 class="product-title">Sovereign Dining Table</h3>
+                    <span class="product-price">₹89,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cabinets" data-id="4">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/0a/2f/80/0a2f8035f9e81725991f76e0d37165a6.jpg" alt="Wooden Almarah">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Cabinets & Almarahs</span>
+                    <h3 class="product-title">Imperial Rosewood Almarah</h3>
+                    <span class="product-price">₹1,35,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-id="5">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/736x/8a/7d/b6/8a7db6826ee8d9578fd5a33b33992931.jpg" alt="Minimalist Stool">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Chairs</span>
+                    <h3 class="product-title">Tapered Teak Sofa Set</h3>
+                    <span class="product-price">₹69,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="chairs" data-id="6">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/64/e0/5a/64e05af08b4b5cdc7bacf07178349a34.jpg" alt="Classic Lounge Chair">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Chairs</span>
+                    <h3 class="product-title">Armchair Oatmeal</h3>
+                    <span class="product-price">₹27,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cabinets" data-id="7">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/fd/04/62/fd0462c710dad3a28db7f7ae972041a1.jpg" alt="Kitchen Credenza">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Cabinets & Almarahs</span>
+                    <h3 class="product-title">Ancestral Kitchen Credenza</h3>
+                    <span class="product-price">₹74,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-id="8">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/ae/39/bf/ae39bf36ace5d58c523f3d5c23830a51.jpg" alt="Dining Table">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tables</span>
+                    <h3 class="product-title">Elegence Dining Table</h3>
+                    <span class="product-price">₹79,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-id="9">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/736x/1e/86/81/1e8681ae92e2d34c09183598919127a7.jpg" alt="Coffee Table">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tables</span>
+                    <h3 class="product-title">Slatted Sofa Set</h3>
+                    <span class="product-price">₹59,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cabinets" data-id="10">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/736x/25/4a/83/254a83cb4e84417fcfd2384133859020.jpg" alt="Platform Bed">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Cabinets & Almarahs</span>
+                    <h3 class="product-title">Bella Cabins</h3>
+                    <span class="product-price">₹94,999</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="floating-nav">
+        <div class="floating-icon active"><i class="fa-solid fa-house"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-border-all"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-user"></i></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active status from previous button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active status to clicked button
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    productCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.classList.remove('hide');
+                        } else {
+                            card.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // Interactive accent touch for floating navbar
+            const floatingIcons = document.querySelectorAll('.floating-icon');
+            floatingIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    floatingIcons.forEach(i => i.classList.remove('active'));
+                    icon.classList.add('active');
+                });
+            });
+        });
+
+        const products = document.querySelectorAll(".product-card");
+
+        products.forEach(product => {
+            product.style.cursor = "pointer";
+
+            product.addEventListener("click", () => {
+                const id = product.dataset.id;
+
+                window.location.href = `THEproductpage.html?id=${id}`;
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Living Legacy | Paithrikam</title>
+
+  <!-- =========================
+       GOOGLE FONTS
+  ========================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- =========================
+       MATERIAL ICONS
+  ========================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- =========================
+       TAILWIND
+  ========================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- =========================
+       CUSTOM STYLES
+  ========================== -->
+  <style>
+
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#fbf9f5;
+      color:#1b1c1a;
+      overflow-x:hidden;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    ::selection{
+      background:#e0c1a7;
+      color:#301f0e;
+    }
+
+    /* =========================
+       TYPOGRAPHY
+    ========================== */
+
+    .display-text{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(3rem,6vw,5rem);
+      line-height:1.05;
+      font-weight:700;
+    }
+
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3.5rem);
+      line-height:1.1;
+      font-weight:600;
+    }
+
+    .body-text{
+      font-size:1rem;
+      line-height:1.9;
+      color:#5b524b;
+    }
+
+    .caps{
+      font-size:.75rem;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       LAYOUT
+    ========================== */
+
+    .container-custom{
+      width:min(1200px,90%);
+      margin:auto;
+    }
+
+    .section-padding{
+      padding:120px 0;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      transition:.4s ease;
+    }
+
+    .header-scrolled{
+      background:rgba(251,249,245,.85);
+      backdrop-filter:blur(14px);
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.5rem 4rem;
+    }
+
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-size:1.7rem;
+      color:white;
+      mix-blend-mode:difference;
+    }
+
+    .nav-icon{
+      color:white;
+      mix-blend-mode:difference;
+      cursor:pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      position:relative;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .hero-image{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-image img{
+      height:100%;
+      object-fit:cover;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.45);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:10;
+      text-align:center;
+      color:white;
+      width:min(900px,90%);
+    }
+
+    .hero-divider{
+      width:1px;
+      height:90px;
+      background:rgba(255,255,255,.4);
+      margin:2rem auto;
+    }
+
+    /* =========================
+       DARK SECTION
+    ========================== */
+
+    .dark-section{
+      background:#301f0e;
+      color:white;
+      position:relative;
+    }
+
+    .two-column{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:5rem;
+      align-items:center;
+    }
+
+    .quote{
+      border-left:2px solid #e0c1a7;
+      padding-left:1.5rem;
+      font-style:italic;
+      color:rgba(255,255,255,.7);
+      margin-top:2rem;
+    }
+
+    /* =========================
+       PROCESS SECTION
+    ========================== */
+
+    .process-grid{
+      display:flex;
+      flex-direction:column;
+      gap:8rem;
+    }
+
+    .process-card{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:4rem;
+      align-items:center;
+    }
+
+    .process-card.reverse{
+      grid-template-columns:.7fr 1.3fr;
+    }
+
+    .process-image{
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.15);
+    }
+
+    .process-image img{
+      aspect-ratio:16/9;
+      object-fit:cover;
+      transition:1s ease;
+    }
+
+    .process-image:hover img{
+      transform:scale(1.05);
+    }
+
+    .number{
+      font-family:'Playfair Display',serif;
+      font-size:5rem;
+      color:rgba(48,31,14,.08);
+      line-height:1;
+      margin-bottom:-1rem;
+    }
+
+    /* =========================
+       SPOTLIGHT
+    ========================== */
+
+    .spotlight{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:5rem;
+      align-items:center;
+    }
+
+    .spotlight-image{
+      position:relative;
+      width:100%;
+      max-width:380px;
+      margin:auto;
+    }
+
+    .blob{
+      position:absolute;
+      inset:0;
+      background:#e0c1a7;
+      opacity:.25;
+      border-radius:60% 40% 30% 70%;
+      transform:rotate(15deg);
+      animation:pulse 8s infinite;
+    }
+
+    .spotlight-image img{
+      position:relative;
+      z-index:2;
+      border-radius:60% 40% 30% 70%;
+      border:10px solid #fbf9f5;
+      box-shadow:0 20px 60px rgba(0,0,0,.15);
+    }
+
+    @keyframes pulse{
+      0%,100%{
+        transform:rotate(15deg) scale(1);
+      }
+      50%{
+        transform:rotate(20deg) scale(1.05);
+      }
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:#ddd;
+    }
+
+    .stat-card{
+      background:#fbf9f5;
+      padding:4rem 2rem;
+      text-align:center;
+    }
+
+    .stat-number{
+      font-family:'Playfair Display',serif;
+      font-size:3rem;
+      color:#301f0e;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta{
+      height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .btn-primary{
+      display:inline-block;
+      margin-top:2rem;
+      padding:1rem 2.5rem;
+      background:#301f0e;
+      color:white;
+      letter-spacing:.2em;
+      font-size:.8rem;
+      text-transform:uppercase;
+      transition:.4s ease;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================== */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1.2s cubic-bezier(.22,1,.36,1);
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:900px){
+
+      nav{
+        padding:1.5rem;
+      }
+
+      .two-column,
+      .process-card,
+      .process-card.reverse,
+      .spotlight{
+        grid-template-columns:1fr;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .section-padding{
+        padding:90px 0;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="header">
+
+    <nav>
+
+      <span class="material-symbols-outlined nav-icon">
+        menu
+      </span>
+
+      <h1 class="logo">Paithrikam</h1>
+
+      <span class="material-symbols-outlined nav-icon">
+        search
+      </span>
+
+    </nav>
+
+  </header>
+
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-image">
+
+      <img id="heroImg"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ7et1yFIlw1et1Etz0nEsQO0ahw50F9L4RMmy-gCiqTjD1W7YKoBO-2ERW3HzIk8RvDVyVFOR86k3m8fXv9Z3W_ipZqn7nvFdi0pGtDr-MHJYc8JT2GOzjCD3FGOy0uRRK3vFV_exJXyefUkLCPiW4ubWrGGkDtESRliVFKSOJ3BpGaZcc_YHcglOMmHskfEhArxRd8wYYQoH6Te__JBh_0MKEnuAHOA1Op405ghRTzgZ9GB7vsZLGIkLvzv_15bEkmifo1IXzg3A"
+      alt="Hero Image">
+
+      <div class="hero-overlay"></div>
+
+    </div>
+
+    <div class="hero-content reveal">
+
+      <p class="caps">Chapter I</p>
+
+      <h2 class="display-text">
+        The Wisdom <br>
+        of the Chisel
+      </h2>
+
+      <div class="hero-divider"></div>
+
+      <p class="caps">
+        30 Years of Living Legacy
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       ATELIER SECTION
+  ========================== -->
+
+  <section class="dark-section section-padding">
+
+    <div class="container-custom two-column reveal">
+
+      <div>
+
+        <p class="caps">The Atelier</p>
+
+        <h3 class="section-title">
+          Where Hands Hold Memory
+        </h3>
+
+        <p class="quote">
+          “In our sanctuary, teak is not merely timber.
+          It is a dialogue between the earth's quiet
+          growth and a master's enduring patience.”
+        </p>
+
+      </div>
+
+      <div>
+
+        <p class="body-text">
+          Beyond the tools lies a collective consciousness spanning three decades.
+          The Atelier of Elders is not just a workshop; it is a repository of sensory intuition.
+        </p>
+
+        <br>
+
+        <p class="body-text">
+          Our master carpenters hear the grain,
+          feel the moisture, and understand the soul
+          of the wood before the first cut is made.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       PROCESS SECTION
+  ========================== -->
+
+  <section class="section-padding">
+
+    <div class="container-custom">
+
+      <div class="reveal">
+
+        <p class="caps">Chapter II</p>
+
+        <h3 class="section-title">
+          The Ritual of Creation
+        </h3>
+
+      </div>
+
+      <div class="process-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="process-card reveal">
+
+          <div class="process-image">
+
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfIoSvt-gScmpz_nWKL7DhEJENMiHI6uNaTvHymW6D_rofwOCOSrJKHi9j4LkO5qx-gOyFs8huO2mzG5395Slv5lT846qofgEpnbolfuP1Y9E-h-Ai6nsNnKCrnFb92sJqbuYuWAcvcI0Fu1UyyhDnR7kPaLm2fAVOIzIEcIwgcO5w15dGXlEqh9IyPk6Q02YQ9Eq47Yl0UxiRr2QQf9H04qWS4THaVHpfsreJErUaNCIYanbdPzKJz4gqdaiXiiX6kyyoTeUl1xDS">
+
+          </div>
+
+          <div>
+
+            <div class="number">01</div>
+
+            <h4 class="section-title">
+              The Silent Selection
+            </h4>
+
+            <p class="body-text">
+              Identifying timber with the perfect density and oil content.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       SPOTLIGHT
+  ========================== -->
+
+  <section class="section-padding">
+
+    <div class="container-custom spotlight reveal">
+
+      <div class="spotlight-image">
+
+        <div class="blob"></div>
+
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBR4O6cQnyIks9dS2x40nf_LiQ86MAjpU5DeXsAx37NIVC8H3FIx8ZdoC36XAPLiLDr-xZa3ZYxjQvuhNEw7BAMhP2thgddEru4JTl4myEyCaSIR-ZZsdj_rtc2EpXGczASSB4E5JPWE65RUlqPo0bR4XkWVZp8_dj4A1UrW8JDZsGQ5pW9_1KFXdosdTCjJYXS4o6hJRvxxq6OnqYATCzJGiGCX9xfDv7y3LxxHL5zKz-2ESwVfBGk0NK0SjDg_wVZwW9O5O-ws4Q">
+
+      </div>
+
+      <div>
+
+        <p class="caps">
+          Spotlight
+        </p>
+
+        <h3 class="section-title">
+          “Teak has a voice. If you move too fast,
+          you'll never hear it.”
+        </h3>
+
+        <br>
+
+        <p class="body-text">
+          — Raghavan K. <br>
+          Master Artisan since 1990
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       STATS
+  ========================== -->
+
+  <section class="section-padding">
+
+    <div class="container-custom stats-grid reveal">
+
+      <div class="stat-card">
+
+        <p class="caps">Master Elders</p>
+
+        <div class="stat-number">12</div>
+
+      </div>
+
+      <div class="stat-card">
+
+        <p class="caps">Experience</p>
+
+        <div class="stat-number">30y+</div>
+
+      </div>
+
+      <div class="stat-card">
+
+        <p class="caps">Industrial Input</p>
+
+        <div class="stat-number">0%</div>
+
+      </div>
+
+      <div class="stat-card">
+
+        <p class="caps">Durability</p>
+
+        <div class="stat-number">∞</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CTA
+  ========================== -->
+
+  <section class="cta">
+
+    <div class="reveal">
+
+      <h3 class="section-title">
+        Carry the legacy home.
+      </h3>
+
+      <a href="product.html" class="btn-primary">
+        Discover Collection
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // =========================
+    // REVEAL ANIMATION
+    // =========================
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries)=>{
+
+      entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+          entry.target.classList.add('active');
+        }
+
+      });
+
+    },{threshold:0.15});
+
+    reveals.forEach((el)=>{
+      observer.observe(el);
+    });
+
+    // =========================
+    // PARALLAX HERO
+    // =========================
+
+    const heroImg = document.getElementById('heroImg');
+
+    window.addEventListener('scroll',()=>{
+
+      const scrollY = window.scrollY;
+
+      heroImg.style.transform =
+      `translateY(${scrollY * 0.35}px)`;
+
+    });
+
+    // =========================
+    // HEADER EFFECT
+    // =========================
+
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll',()=>{
+
+      if(window.scrollY > 50){
+
+        header.classList.add('header-scrolled');
+
+      }else{
+
+        header.classList.remove('header-scrolled');
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

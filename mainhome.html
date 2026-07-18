@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paithrikam | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-brown: #2E1A0C;
+            --accent-gold: #C5A880;
+            --bg-light: #F4EFEA;
+            --bg-card: #FAF8F5;
+            --text-dark: #332921;
+            --text-muted: #7A6E65;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(244, 239, 234, 0.95), rgba(244, 239, 234, 0.8));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(46, 26, 12, 0.05);
+        }
+        .nav-icon {
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .nav-icon:hover {
+            color: var(--accent-gold);
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--primary-brown);
+            text-decoration: none;
+        }
+        /* --- HERO BANNER SECTION --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(46, 26, 12, 0.5), rgba(46, 26, 12, 0.5)),
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+        .hero-subtitle {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 12px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            max-width: 900px;
+            line-height: 1.15;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            max-width: 520px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+        .cta-button {
+            background-color: var(--accent-gold);
+            color: var(--primary-brown);
+            padding: 16px 42px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+        .cta-button:hover {
+            background-color: #d4b48f;
+            transform: translateY(-3px);
+        }
+        /* --- FEATURED CATEGORIES --- */
+        .categories-section {
+            max-width: 1200px;
+            margin: 80px auto 60px;
+            padding: 0 5%;
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-brown);
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            position: relative;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        .category-card:hover {
+            transform: scale(1.03);
+        }
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .category-card:hover img {
+            transform: scale(1.08);
+        }
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(46, 26, 12, 0.85));
+            padding: 40px 25px 25px;
+            color: white;
+        }
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: 1.65rem;
+            margin-bottom: 6px;
+        }
+        /* --- FEATURED PRODUCTS --- */
+        .featured-section {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 5%;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 35px 25px;
+        }
+        .product-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(46, 26, 12, 0.12);
+        }
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 110%;
+            overflow: hidden;
+            background-color: #eaddd3;
+        }
+        .product-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.07);
+        }
+        .product-info {
+            padding: 22px 18px;
+            text-align: center;
+        }
+        .product-category {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .product-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--primary-brown);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .product-price {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary-brown);
+        }
+        /* --- FLOATING BOTTOM NAV --- */
+        .floating-nav {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(210, 200, 190, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 12px 28px;
+            border-radius: 50px;
+            display: flex;
+            gap: 32px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .floating-icon {
+            font-size: 1.35rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .floating-icon:hover, .floating-icon.active {
+            background-color: var(--primary-brown);
+            color: #fff;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.7rem; }
+            .hero-desc { font-size: 1rem; }
+            .categories-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+            .category-card { height: 320px; }
+            .floating-nav { 
+                gap: 22px; 
+                padding: 10px 20px; 
+                width: 92%; 
+                bottom: 18px;
+            }
+            .floating-icon { font-size: 1.25rem; width: 42px; height: 42px; }
+        }
+        /* --- BEAUTIFUL FOOTER --- */
+        footer {
+            background-color: var(--primary-brown);
+            color: #e8d9c7;
+            padding: 90px 5% 40px;
+            position: relative;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 50px;
+        }
+        .footer-col h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            color: #e8d9c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+            padding-left: 6px;
+        }
+        .newsletter {
+            max-width: 320px;
+        }
+        .newsletter input {
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 50px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .newsletter button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent-gold);
+            color: var(--primary-brown);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .newsletter button:hover {
+            background-color: #d4b48f;
+        }
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            gap: 18px;
+        }
+        .social-icons a {
+            color: #e8d9c7;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--accent-gold);
+            transform: translateY(-4px);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(197, 168, 128, 0.2);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #b89f7e;
+        }
+        .footer-bottom p {
+            margin-bottom: 8px;
+        }
+
+        /* --- FLOATING NAV --- */
+        .floating-nav {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(210, 200, 190, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 12px 28px;
+            border-radius: 50px;
+            display: flex;
+            gap: 32px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .floating-icon {
+            font-size: 1.35rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .floating-icon:hover, .floating-icon.active {
+            background-color: var(--primary-brown);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.7rem; }
+            footer { padding: 70px 5% 30px; }
+            .footer-content { gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars nav-icon"></i>
+        <a href="home.html" class="logo">Paithrikam</a>
+        <i class="fa-solid fa-bag-shopping nav-icon"></i>
+    </header>
+
+    <section class="hero">
+        <span class="hero-subtitle">Sovereign Heritage</span>
+        <h1 class="hero-title">Timeless Craftsmanship,<br>Modern Legacy</h1>
+        <p class="hero-desc">Handcrafted furniture that carries the soul of Kerala’s royal woodworking tradition.</p>
+        <button onclick="window.location.href='collections.html'" class="cta-button">Explore Collections</button>
+    </section>
+
+    <!-- Categories -->
+    <div class="categories-section">
+        <h2 class="section-title">Shop by Craft</h2>
+        <div class="categories-grid">
+            <!-- Using images from your product page -->
+            <div class="category-card" onclick="window.location.href='product.html?filter=beds'">
+                <img src="https://i.pinimg.com/736x/56/b0/b1/56b0b10034903f070e9fe46de1a1e6e0.jpg" alt="Beds">
+                <div class="category-overlay">
+                    <div class="category-name">Beds</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="window.location.href='collections.html?filter=chairs'">
+                <img src="https://i.pinimg.com/1200x/64/e0/5a/64e05af08b4b5cdc7bacf07178349a34.jpg" alt="Chairs">
+                <div class="category-overlay">
+                    <div class="category-name">Chairs</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="window.location.href='collections.html?filter=tables'">
+                <img src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=600&q=80" alt="Tables">
+                <div class="category-overlay">
+                    <div class="category-name">Tables</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="window.location.href='collections.html?filter=cabinets'">
+                <img src="https://i.pinimg.com/1200x/0a/2f/80/0a2f8035f9e81725991f76e0d37165a6.jpg" alt="Cabinets">
+                <div class="category-overlay">
+                    <div class="category-name">Cabinets & Almarahs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="featured-section">
+        <h2 class="section-title">Featured Masterpieces</h2>
+        <div class="products-grid" id="featuredGrid">
+            <!-- First few products from your collections -->
+            <div class="product-card" data-id="1">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/736x/56/b0/b1/56b0b10034903f070e9fe46de1a1e6e0.jpg" alt="Royal Teak Bed">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Beds</span>
+                    <h3 class="product-title">Malabar Royal Teak Bed</h3>
+                    <span class="product-price">₹1,49,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="2">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/0d/e0/29/0de029ca9ec62a94470fa53d67a0744d.jpg" alt="Classic Lounge Chair">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Chairs</span>
+                    <h3 class="product-title">Heritage Easy Chair</h3>
+                    <span class="product-price">₹24,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="3">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=600&q=80" alt="Dining Table">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tables</span>
+                    <h3 class="product-title">Sovereign Dining Table</h3>
+                    <span class="product-price">₹89,999</span>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="4">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://i.pinimg.com/1200x/0a/2f/80/0a2f8035f9e81725991f76e0d37165a6.jpg" alt="Wooden Almarah">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Cabinets & Almarahs</span>
+                    <h3 class="product-title">Imperial Rosewood Almarah</h3>
+                    <span class="product-price">₹1,35,999</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Story Section -->
+  <section style="margin-top:32px; padding:64px 16px; background:#f5f3ef; border-radius:8px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:24px;">
+    <span style="font-family:'Inter', sans-serif; font-size:12px; color:#4e453e; text-transform:uppercase;">OUR CRAFT</span>
+    <h2 style="font-family:'Playfair Display', serif; font-size:36px; line-height:44px; color:#301f0e; max-width:768px;">Ethically Sourced, Hand-Planed Heritage.</h2>
+    <p style="font-family:'Inter', sans-serif; font-size:18px; color:#4e453e; max-width:600px;">Every Paithrikam piece begins with a conversation between the artisan and the wood, honoring centuries-old techniques of Kerala craftsmanship.</p>
+    <button style="margin-top:16px; padding:16px 40px; background:#301f0e; color:#fff; border:none; border-radius:9999px; font-family:'Inter', sans-serif; font-size:12px; font-weight:600; cursor:pointer; transition:background 0.2s;">
+      READ THE STORY
+    </button>
+  </section>
+
+<!-- SUPER NICE FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Paithrikam</h3>
+                <p>Where Kerala’s ancestral woodworking artistry meets contemporary elegance. Every piece tells a story of heritage and mastery.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Discover</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="#">Bespoke Designs</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Craftsmanship</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Care</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h3>Stay in Heritage</h3>
+                <p>Join our circle and receive stories from the workshop, exclusive previews, and special offers.</p>
+                <input type="email" placeholder="Your email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Paithrikam Heritage Furniture. All Rights Reserved.</p>
+            <p>Crafted with pride in Kerala • Timeless since 1987</p>
+        </div>
+    </footer>
+
+    <!-- Floating Navigation (exactly matching the image) -->
+    <div class="floating-nav">
+        <div class="floating-icon active"><i class="fa-solid fa-house"></i></div>
+        <div class="floating-icon" onclick="window.location.href='home.html'"><i class="fa-solid fa-border-all"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-user"></i></div>
+    </div>
+
+    <script>
+        // Product click handler (same as collections)
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.id;
+                window.location.href = `product.html?id=${id}`;
+            });
+        });
+
+        // Make floating nav interactive
+        const floatingIcons = document.querySelectorAll('.floating-icon');
+        floatingIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                floatingIcons.forEach(i => i.classList.remove('active'));
+                icon.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
